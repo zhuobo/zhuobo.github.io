@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Linux基础一、linux的应用领域 基于linux的企业服务器：很多公司使用Linux作为服务端系统 嵌入式应用：安卓、智能家居、银行系统等 Linux在电影娱乐业的应用  二、常用命令命令基本格式：命令 [-选项] [参数]，例如：ls -la /usr 当有多个选项，可以写在一起 1. 目录、文件处理命令 ls：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a">
+<meta name="description" content="一、linux的应用领域 基于linux的企业服务器：很多公司使用Linux作为服务端系统 嵌入式应用：安卓、智能家居、银行系统等 Linux在电影娱乐业的应用  二、常用命令命令基本格式：命令 [-选项] [参数]，例如：ls -la /usr 当有多个选项，可以写在一起 1. 目录、文件处理命令 ls：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a（显示隐藏文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lunix基础">
 <meta property="og:url" content="http://yoursite.com/2019/05/28/Lunix基础/index.html">
 <meta property="og:site_name" content="酒徒">
-<meta property="og:description" content="Linux基础一、linux的应用领域 基于linux的企业服务器：很多公司使用Linux作为服务端系统 嵌入式应用：安卓、智能家居、银行系统等 Linux在电影娱乐业的应用  二、常用命令命令基本格式：命令 [-选项] [参数]，例如：ls -la /usr 当有多个选项，可以写在一起 1. 目录、文件处理命令 ls：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a">
+<meta property="og:description" content="一、linux的应用领域 基于linux的企业服务器：很多公司使用Linux作为服务端系统 嵌入式应用：安卓、智能家居、银行系统等 Linux在电影娱乐业的应用  二、常用命令命令基本格式：命令 [-选项] [参数]，例如：ls -la /usr 当有多个选项，可以写在一起 1. 目录、文件处理命令 ls：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a（显示隐藏文件">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T14:44:51.071Z">
+<meta property="og:updated_time" content="2019-05-28T14:57:29.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lunix基础">
-<meta name="twitter:description" content="Linux基础一、linux的应用领域 基于linux的企业服务器：很多公司使用Linux作为服务端系统 嵌入式应用：安卓、智能家居、银行系统等 Linux在电影娱乐业的应用  二、常用命令命令基本格式：命令 [-选项] [参数]，例如：ls -la /usr 当有多个选项，可以写在一起 1. 目录、文件处理命令 ls：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a">
+<meta name="twitter:description" content="一、linux的应用领域 基于linux的企业服务器：很多公司使用Linux作为服务端系统 嵌入式应用：安卓、智能家居、银行系统等 Linux在电影娱乐业的应用  二、常用命令命令基本格式：命令 [-选项] [参数]，例如：ls -la /usr 当有多个选项，可以写在一起 1. 目录、文件处理命令 ls：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a（显示隐藏文件">
 
 
 
@@ -299,7 +299,7 @@
       
 
       
-        <h1 id="Linux基础"><a href="#Linux基础" class="headerlink" title="Linux基础"></a>Linux基础</h1><h2 id="一、linux的应用领域"><a href="#一、linux的应用领域" class="headerlink" title="一、linux的应用领域"></a>一、linux的应用领域</h2><ol>
+        <h2 id="一、linux的应用领域"><a href="#一、linux的应用领域" class="headerlink" title="一、linux的应用领域"></a>一、linux的应用领域</h2><ol>
 <li>基于linux的企业服务器：很多公司使用Linux作为服务端系统</li>
 <li>嵌入式应用：安卓、智能家居、银行系统等</li>
 <li>Linux在电影娱乐业的应用</li>
@@ -382,21 +382,27 @@
 <h3 id="5-vim常用操作、技巧"><a href="#5-vim常用操作、技巧" class="headerlink" title="5. vim常用操作、技巧"></a>5. vim常用操作、技巧</h3><ol>
 <li><h4 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h4><ul>
 <li><p>插入命令：</p>
+<hr>
 <p>| 命令 | 插入位置             |<br>| :–: | ——————– |<br>|  i   | 在光标所在字符前插入 |<br>|  I   | 在光标所在行首插入   |<br>|  o   | 在光标下一行插入新行 |<br>|  O   | 在光标下一行插入新行 |<br>|  a   | 在光标所在字符后插入 |<br>|  A   | 在光标所在行尾插入   |</p>
 </li>
 <li><p>定位命令：</p>
+<hr>
 <p>|    命令    | 作用                     |<br>| :——–: | ———————— |<br>|  ：set nu  | 设置行号                 |<br>| ：set nonu | 取消行号                 |<br>|     x      | 删除光标所在处字符       |<br>|     nx     | 删除光标所在处后n个字符  |<br>|     dd     | 删除光标所在行           |<br>|    ndd     | 删除n行                  |<br>|     D      | 删除光标所在处到行尾内容 |</p>
 </li>
 <li><p>复制剪切命令：</p>
+<hr>
 <p>| 命令 | 作用                     |<br>| :–: | ———————— |<br>|  yy  | 复制当前行               |<br>| nyy  | 复制当前行以下n行        |<br>|  dd  | 剪切当前行               |<br>| ndd  | 剪切当前行以下n行        |<br>| p、P | 粘贴在当前行上、或者行下 |</p>
 </li>
 <li><p>取消和替换：</p>
+<hr>
 <p>| 命令 | 作用                            |<br>| :–: | ——————————- |<br>|  u   | 取消上一步操作                  |<br>|  R   | 从光标所在处开始替换，知道按esc |<br>|  r   | 替换光标所在字符                |</p>
 </li>
 <li><p>查找：</p>
+<hr>
 <p>|  命令   | 作用                                               |<br>| :—–: | ————————————————– |<br>| /string | 搜索指定字符串，如果要忽略大小写先输入命令 :set ic |</p>
 </li>
 <li><p>退出和保存：</p>
+<hr>
 <p>|      命令       | 作用                   |<br>| :————-: | ———————- |<br>|       :w        | 保存修改               |<br>| :w new_filename | 另存为新文件           |<br>|       :wq       | 保存修改并退出         |<br>|       :q!       | 不保存修改退出         |<br>|       ZZ        | 快捷键，保存修改并退出 |</p>
 </li>
 </ul>
@@ -548,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux基础"><span class="nav-number">1.</span> <span class="nav-text">Linux基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、linux的应用领域"><span class="nav-number">1.1.</span> <span class="nav-text">一、linux的应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、常用命令"><span class="nav-number">1.2.</span> <span class="nav-text">二、常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-目录、文件处理命令"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 目录、文件处理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-更改文件权限"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 更改文件权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件搜索命令"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 文件搜索命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find：find-搜索范围-匹配条件"><span class="nav-number">1.2.4.</span> <span class="nav-text">find：find [搜索范围] [匹配条件]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#locate：类似于everything"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">locate：类似于everything</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep：在文件内容中查找"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">grep：在文件内容中查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man：命令的帮助信息"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">man：命令的帮助信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-关机重启命令"><span class="nav-number">1.2.5.</span> <span class="nav-text">4.关机重启命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-打包压缩命令"><span class="nav-number">1.2.6.</span> <span class="nav-text">5. 打包压缩命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-vim常用操作、技巧"><span class="nav-number">1.2.7.</span> <span class="nav-text">5. vim常用操作、技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用操作"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">常用操作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、linux的应用领域"><span class="nav-number">1.</span> <span class="nav-text">一、linux的应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、常用命令"><span class="nav-number">2.</span> <span class="nav-text">二、常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-目录、文件处理命令"><span class="nav-number">2.1.</span> <span class="nav-text">1. 目录、文件处理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-更改文件权限"><span class="nav-number">2.2.</span> <span class="nav-text">2. 更改文件权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件搜索命令"><span class="nav-number">2.3.</span> <span class="nav-text">3. 文件搜索命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find：find-搜索范围-匹配条件"><span class="nav-number">2.4.</span> <span class="nav-text">find：find [搜索范围] [匹配条件]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#locate：类似于everything"><span class="nav-number">2.4.1.</span> <span class="nav-text">locate：类似于everything</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep：在文件内容中查找"><span class="nav-number">2.4.2.</span> <span class="nav-text">grep：在文件内容中查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man：命令的帮助信息"><span class="nav-number">2.4.3.</span> <span class="nav-text">man：命令的帮助信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-关机重启命令"><span class="nav-number">2.5.</span> <span class="nav-text">4.关机重启命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-打包压缩命令"><span class="nav-number">2.6.</span> <span class="nav-text">5. 打包压缩命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-vim常用操作、技巧"><span class="nav-number">2.7.</span> <span class="nav-text">5. vim常用操作、技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用操作"><span class="nav-number">2.7.1.</span> <span class="nav-text">常用操作</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
