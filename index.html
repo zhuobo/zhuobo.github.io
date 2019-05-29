@@ -283,7 +283,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/29/struts2/" itemprop="url">struts2</a></h1>
+                <a class="post-title-link" href="/2019/05/29/struts2/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -335,7 +335,8 @@
       
         
           
-            <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括：</p>
+            <p>title: struts2<br>date: 2019-05-29 16:54:10<br>tags: web</p>
+<h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括：</p>
 <p>M：Model，用于封装数据，javabean</p>
 <p>V：View，用于展示数据，jsp</p>
 <p>C：Controller，控制程序的流程，servlet、filter</p>
@@ -362,10 +363,10 @@
 <li><p>根据method指定的方法返回的字符串 “success” 找到对应name为success的result标签，将success.jsp转为静态页面响应回客户端</p>
 </li>
 <li><p>struts流程图：</p>
-<p><img src="/2019/05/29/struts2/Users\zhuobo\Desktop\struts流程图.png" alt></p>
+<p><img src="/2019/05/29/struts2/images\struts2流程.png" alt></p>
 </li>
 <li><p>struts架构图，解释了struts处理请求的过程</p>
-<p><img src="/2019/05/29/struts2/Documents\Javaweb\Struts2-Architecture.png" alt></p>
+<p><img src="/2019/05/29/struts2/images\Struts2-Architecture.png" alt></p>
 </li>
 </ol>
 <h2 id="四、struts配置文件加载的顺序"><a href="#四、struts配置文件加载的顺序" class="headerlink" title="四、struts配置文件加载的顺序"></a>四、struts配置文件加载的顺序</h2><ol>
@@ -460,9 +461,9 @@
 </li>
 </ol>
 </li>
-<li><p>配置为开发模式：在struts.xml中配置一个常量</p>
+<li><p>配置为开发模式：在struts.xml中配置一个常量，显示更为详细的错误新仙尼</p>
 <p><code>&lt;constant name=&quot;struts.devMode&quot; value=&quot;true&quot;&gt;&lt;/constant&gt;</code></p>
-<p><img src="/2019/05/29/struts2/Documents\我的坚果云\2019\blogs\javaNotes\Struts2.assets\1558967349621.png" alt="1558967349621"></p>
+<p><img src="/2019/05/29/struts2/images\错误信息.png" alt="1558967349621"></p>
 </li>
 </ol>
 <h2 id="五、struts-xml配置文件的元素"><a href="#五、struts-xml配置文件的元素" class="headerlink" title="五、struts.xml配置文件的元素"></a>五、struts.xml配置文件的元素</h2><h3 id="1-package元素，表示包，相关属性如下"><a href="#1-package元素，表示包，相关属性如下" class="headerlink" title="1. package元素，表示包，相关属性如下"></a>1. package元素，表示包，相关属性如下</h3><table>
@@ -830,178 +831,6 @@
 </li>
 <li><p>Jedis连接池</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test5() &#123;</span><br><span class="line">    // 创建一个配置对象</span><br><span class="line">    JedisPoolConfig config = new JedisPoolConfig();</span><br><span class="line">    config.setMaxTotal(50);// 最大的允许连接数量</span><br><span class="line">    config.setMaxIdle(10);// 最大的空闲连接数</span><br><span class="line"></span><br><span class="line">    // 创建一个JedisPool连接池对象</span><br><span class="line">    JedisPool jedisPool = new JedisPool(config, &quot;localhost&quot;, 6379);</span><br><span class="line"></span><br><span class="line">    // 获取连接</span><br><span class="line">    Jedis jedis = jedisPool.getResource();</span><br><span class="line"></span><br><span class="line">    // 使用</span><br><span class="line">    jedis.set(&quot;username&quot;, &quot;Tom&quot;);</span><br><span class="line"></span><br><span class="line">    // 归还连接给连接池</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/2019-05-28-Test1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="酒徒">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒徒">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/28/2019-05-28-Test1/" itemprop="url">Test1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T22:42:22+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-aaa"><a href="#1-aaa" class="headerlink" title="1. aaa"></a>1. aaa</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">aa</th>
-<th style="text-align:center">aa</th>
-<th style="text-align:right">aa</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">bb</td>
-<td style="text-align:center">dd</td>
-<td style="text-align:right">dd</td>
-</tr>
-<tr>
-<td style="text-align:left">dd</td>
-<td style="text-align:center">cc</td>
-<td style="text-align:right">cc</td>
-</tr>
-<tr>
-<td style="text-align:left">cc</td>
-<td style="text-align:center">gg</td>
-<td style="text-align:right">ss</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>rr</th>
-<th>gg</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fg</td>
-<td>gg</td>
-</tr>
-<tr>
-<td>jj</td>
-<td>jl</td>
-</tr>
-<tr>
-<td>lk</td>
-<td>;l</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li><p>jl;</p>
-<p>| ;djf;a | df      |<br>| —— | ——- |<br>|        | js;dfj  |<br>| ;fja   | ;adflaj |<br>| ;asdjf | dsf     |</p>
-</li>
 </ol>
 
           
@@ -1439,6 +1268,178 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/2019-05-28-Test1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酒徒">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="酒徒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/28/2019-05-28-Test1/" itemprop="url">Test1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T22:42:22+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-aaa"><a href="#1-aaa" class="headerlink" title="1. aaa"></a>1. aaa</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">aa</th>
+<th style="text-align:center">aa</th>
+<th style="text-align:right">aa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bb</td>
+<td style="text-align:center">dd</td>
+<td style="text-align:right">dd</td>
+</tr>
+<tr>
+<td style="text-align:left">dd</td>
+<td style="text-align:center">cc</td>
+<td style="text-align:right">cc</td>
+</tr>
+<tr>
+<td style="text-align:left">cc</td>
+<td style="text-align:center">gg</td>
+<td style="text-align:right">ss</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>rr</th>
+<th>gg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fg</td>
+<td>gg</td>
+</tr>
+<tr>
+<td>jj</td>
+<td>jl</td>
+</tr>
+<tr>
+<td>lk</td>
+<td>;l</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>jl;</p>
+<p>| ;djf;a | df      |<br>| —— | ——- |<br>|        | js;dfj  |<br>| ;fja   | ;adflaj |<br>| ;asdjf | dsf     |</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1498,7 +1499,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
