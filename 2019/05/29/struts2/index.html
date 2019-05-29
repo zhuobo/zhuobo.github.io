@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/images/struts2流程.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/images/Struts2-Architecture.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/images/错误信息.png">
-<meta property="og:updated_time" content="2019-05-29T10:19:24.957Z">
+<meta property="og:updated_time" content="2019-05-29T10:25:18.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="酒徒">
 <meta name="twitter:description" content="title: struts2date: 2019-05-29 16:54:10tags: web 一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的">
@@ -363,12 +363,13 @@
 <li><p>根据method指定的方法返回的字符串 “success” 找到对应name为success的result标签，将success.jsp转为静态页面响应回客户端</p>
 </li>
 <li><p>struts流程图：</p>
-<p><img src="/2019/05/29/struts2/images\struts2流程.png" alt></p>
-</li>
-<li><p>struts架构图，解释了struts处理请求的过程</p>
-<p><img src="/2019/05/29/struts2/images\Struts2-Architecture.png" alt></p>
 </li>
 </ol>
+<p><img src="/2019/05/29/struts2/images\struts2流程.png" alt></p>
+<ol start="5">
+<li>struts架构图，解释了struts处理请求的过程</li>
+</ol>
+<p><img src="/2019/05/29/struts2/images\Struts2-Architecture.png" alt></p>
 <h2 id="四、struts配置文件加载的顺序"><a href="#四、struts配置文件加载的顺序" class="headerlink" title="四、struts配置文件加载的顺序"></a>四、struts配置文件加载的顺序</h2><ol>
 <li>加载顺序</li>
 </ol>
@@ -456,16 +457,16 @@
 </li>
 <li><p>方法3：在web.xml中配置如下，后缀为ddd</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;struts2&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt;</span><br><span class="line"></span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;struts.action.extension&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;ddd&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">&lt;/filter&gt;</span><br></pre></td></tr></table></figure>
-<p>​    </p>
-<p>​    </p>
 </li>
 </ol>
 </li>
+</ol>
+<ol start="4">
 <li><p>配置为开发模式：在struts.xml中配置一个常量，显示更为详细的错误新仙尼</p>
 <p><code>&lt;constant name=&quot;struts.devMode&quot; value=&quot;true&quot;&gt;&lt;/constant&gt;</code></p>
-<p><img src="/2019/05/29/struts2/images\错误信息.png" alt="1558967349621"></p>
 </li>
 </ol>
+<p><img src="/2019/05/29/struts2/images\错误信息.png" alt="1558967349621"></p>
 <h2 id="五、struts-xml配置文件的元素"><a href="#五、struts-xml配置文件的元素" class="headerlink" title="五、struts.xml配置文件的元素"></a>五、struts.xml配置文件的元素</h2><h3 id="1-package元素，表示包，相关属性如下"><a href="#1-package元素，表示包，相关属性如下" class="headerlink" title="1. package元素，表示包，相关属性如下"></a>1. package元素，表示包，相关属性如下</h3><table>
 <thead>
 <tr>
