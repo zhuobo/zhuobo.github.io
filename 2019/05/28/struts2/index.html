@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="web,">
 
 
 
@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="酒徒的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="酒徒">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的相关jar包  在src目录下创建 struts.xml,配置如下 123456789101112">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="struts2">
+<meta property="og:url" content="http://yoursite.com/2019/05/28/struts2/index.html">
 <meta property="og:site_name" content="酒徒">
-<meta property="og:description" content="酒徒的博客">
+<meta property="og:description" content="一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的相关jar包  在src目录下创建 struts.xml,配置如下 123456789101112">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/struts2流程.png">
+<meta property="og:image" content="http://yoursite.com/images/Struts2-Architecture.png">
+<meta property="og:image" content="http://yoursite.com/images/错误信息.png">
+<meta property="og:updated_time" content="2019-05-29T10:30:36.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="酒徒">
-<meta name="twitter:description" content="酒徒的博客">
+<meta name="twitter:title" content="struts2">
+<meta name="twitter:description" content="一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的相关jar包  在src目录下创建 struts.xml,配置如下 123456789101112">
+<meta name="twitter:image" content="http://yoursite.com/images/struts2流程.png">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/28/struts2/">
 
 
 
 
 
-  <title>酒徒</title>
+  <title>struts2 | 酒徒</title>
   
 
 
@@ -143,8 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,655 +254,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/Redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="酒徒">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒徒">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/29/Redis/" itemprop="url">Redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-29T00:50:09+08:00">
-                2019-05-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><p>Redis是一款高性能的NOSQL系列（<strong>NoSQL = Not Only SQL</strong> ）的数据库</p>
-<h3 id="1-1-什么是NOSQL"><a href="#1-1-什么是NOSQL" class="headerlink" title="1.1.什么是NOSQL"></a>1.1.什么是NOSQL</h3><p>​        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。<br>​        随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</p>
-<p>​    1.1.1.    NOSQL和关系型数据库比较<br>​        优点：<br>​            1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。<br>​            2）查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。<br>​            3）存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。<br>​            4）扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</p>
-<p>​        缺点：<br>​            1）维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。<br>​            2）不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。<br>​            3）不提供关系型数据库对事务的处理。</p>
-<p>​    1.1.2.    非关系型数据库的优势：</p>
-<p>​        1）性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。<br>​        2）可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</p>
-<p>​    1.1.3.    关系型数据库的优势：<br>​        1）复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。<br>​        2）事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</p>
-<p>​    1.1.4.    总结<br>​        关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，<br>​        让NoSQL数据库对关系型数据库的不足进行弥补。<br>​        <strong>一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据</strong></p>
-<h3 id="1-2-主流的NOSQL产品"><a href="#1-2-主流的NOSQL产品" class="headerlink" title="1.2.主流的NOSQL产品"></a>1.2.主流的NOSQL产品</h3><p>​    •    键值(Key-Value)存储数据库<br>​            相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB<br>​            典型应用： 内容缓存，主要用于处理大量数据的高访问负载。<br>​            数据模型： 一系列键值对<br>​            优势： 快速查询<br>​            劣势： 存储的数据缺少结构化<br>​    •    列存储数据库<br>​            相关产品：Cassandra, HBase, Riak<br>​            典型应用：分布式的文件系统<br>​            数据模型：以列簇式存储，将同一列数据存在一起<br>​            优势：查找速度快，可扩展性强，更容易进行分布式扩展<br>​            劣势：功能相对局限<br>​    •    文档型数据库<br>​            相关产品：CouchDB、MongoDB<br>​            典型应用：Web应用（与Key-Value类似，Value是结构化的）<br>​            数据模型： 一系列键值对<br>​            优势：数据结构要求不严格<br>​            劣势： 查询性能不高，而且缺乏统一的查询语法<br>​    •    图形(Graph)数据库<br>​            相关数据库：Neo4J、InfoGrid、Infinite Graph<br>​            典型应用：社交网络<br>​            数据模型：图结构<br>​            优势：利用图结构相关算法。<br>​            劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</p>
-<h3 id="1-3-什么是Redis"><a href="#1-3-什么是Redis" class="headerlink" title="1.3 什么是Redis"></a>1.3 什么是Redis</h3><p>​    Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，官方提供测试数据，50个并发执行100000个请求,读的速度是110000次/s,写的速度是81000次/s ，且Redis通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：<br>​        1) 字符串类型 string<br>​        2) 哈希类型 hash<br>​        3) 列表类型 list<br>​        4) 集合类型 set<br>​        5) 有序集合类型 sortedset<br>​    1.3.1 redis的应用场景<br>​        •    缓存（数据查询、短连接、新闻内容、商品内容等等）<br>​        •    聊天室的在线好友列表<br>​        •    任务队列。（秒杀、抢购、12306等等）<br>​        •    应用排行榜<br>​        •    网站访问统计<br>​        •    数据过期处理（可以精确到毫秒<br>​        •    分布式集群架构中的session分离</p>
-<h2 id="二、命令操作"><a href="#二、命令操作" class="headerlink" title="二、命令操作"></a>二、命令操作</h2><h3 id="1-Redis的数据结构"><a href="#1-Redis的数据结构" class="headerlink" title="1. Redis的数据结构"></a>1. Redis的数据结构</h3><p>Redis存储的是键值对，key<strong>都是字符串</strong>，value可以有<strong>5种</strong>不同的类型数据：</p>
-<ol>
-<li>字符串 string</li>
-<li>哈希类型 hash：map格式，可以存储键值对</li>
-<li>列表类型 list：linkedlist格式，元素可以重复</li>
-<li>集合类型 set 元素不可以重复</li>
-<li>有序集合类型 sortedset 元素可以重复而且有序</li>
-</ol>
-<h3 id="2-Redis命令操作"><a href="#2-Redis命令操作" class="headerlink" title="2. Redis命令操作"></a>2. Redis命令操作</h3><ol>
-<li><p><strong>字符串string</strong></p>
-<ol>
-<li>存储：set key value</li>
-<li>获取：get key</li>
-<li>删除：del key</li>
-</ol>
-</li>
-<li><p><strong>哈希类型 hash</strong></p>
-<ol>
-<li><p>存储：hset key field value</p>
-</li>
-<li><p>获取：</p>
-<ol>
-<li>hget key field：获取指定的field对应的值</li>
-<li>hgetall key：获取所有的field和value</li>
-</ol>
-</li>
-<li><p>删除：hdel key field</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hset myhash username Tom</span><br><span class="line">hset myhash age 18</span><br><span class="line"></span><br><span class="line">hget myhash age -- 18</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-<li><p><strong>列表类型 list</strong>：可以添加一个元素到列表的头部（左）或者尾部（右）</p>
-<ol>
-<li><p>存储：</p>
-<ol>
-<li>lpush key value：将元素加入列表<strong>左边</strong></li>
-<li>rpush key value：将元素加入列表<strong>右边</strong></li>
-</ol>
-</li>
-<li><p>获取：</p>
-<ol>
-<li>lrange key start end：范围获取</li>
-</ol>
-</li>
-<li><p>删除：</p>
-<ol>
-<li>lpop：删除最左边元素，并返回该元素</li>
-<li>rpop：删除最右边元素，并返回该元素</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lpush mylist a</span><br><span class="line">lpush mylist b</span><br><span class="line">lpush mylist c -- a-&gt;b-&gt;c</span><br><span class="line"></span><br><span class="line">lrange mylist 0 -1 -- 获取mylist所有的元素</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><strong>集合类型 set</strong></p>
-<ol>
-<li>存储：sadd key value</li>
-<li>获取：smembers key：获取集合中所有的元素</li>
-<li>删除：srem key value：删除集合中某个元素</li>
-</ol>
-</li>
-<li><p><strong>有序集合类型 sortedset</strong></p>
-<ol>
-<li><p>存储：zadd key score value</p>
-</li>
-<li><p>获取：zrange key start end（withscores）</p>
-</li>
-<li><p>删除：zrem key value</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 127.0.0.1:6379&gt;zadd sorted 10 aaa</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd sorted 30 bbb</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd sorted 20 ccc</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zrange sorted 0 -1</span><br><span class="line">// 按照分数（score）排序</span><br><span class="line">1) &quot;aaa&quot;</span><br><span class="line">2) &quot;ccc&quot;</span><br><span class="line">3) &quot;bbb&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><strong>常用的通用命令：</strong></p>
-<ol>
-<li>keys *：查询所有的键</li>
-<li>type key：获取键对应的value的类型</li>
-<li>del key：删除指定的key以及该key对应的value</li>
-</ol>
-</li>
-</ol>
-<h2 id="三、Redis持久化"><a href="#三、Redis持久化" class="headerlink" title="三、Redis持久化"></a>三、Redis持久化</h2><p>Redis是一个基于内存的数据库，因此当Redis服务器重启会导致数据丢失，可以将Redis数据库的数据存储到硬盘。</p>
-<h3 id="1-Redis持久化机制"><a href="#1-Redis持久化机制" class="headerlink" title="1. Redis持久化机制"></a>1. Redis持久化机制</h3><ol>
-<li><p><strong>RDB:</strong> 默认方式，不需要进行配置，默认使用的机制，在一定的时间间隔内，检测key的变化情况，然后持久化数据</p>
-<ol>
-<li><p>编辑配置文件：redis.windows.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#   after 900 sec (15 min) if at least 1 key changed</span><br><span class="line">#   after 300 sec (5 min) if at least 10 keys changed</span><br><span class="line">#   after 60 sec if at least 10000 keys changed</span><br><span class="line"></span><br><span class="line">save 900 1</span><br><span class="line">save 300 10</span><br><span class="line">save 60 10000</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新启动Redis服务器，并且指定配置文件:$ redis-server.exe redis.windows.conf</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
-<li><p><strong>AOF:</strong> 记录日志的方式，可以记录每一条操作的命令，操作命令后就持久化数据（这样的效果和mysql类似了）</p>
-<ol>
-<li><p>编辑配置文件：redis.windows.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 开启aof模式</span><br><span class="line">appendonly no --&gt; appendonly yes</span><br><span class="line"></span><br><span class="line"># aof模式下的三种持久化方式</span><br><span class="line"></span><br><span class="line"># appendfsync always # 总是，每一条操作都持久化</span><br><span class="line">appendfsync everysec # 每间隔1s进行一次持久化</span><br><span class="line"># appendfsync no # 不进行持久化</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="四、Java客户端Jedis"><a href="#四、Java客户端Jedis" class="headerlink" title="四、Java客户端Jedis"></a>四、Java客户端Jedis</h2><ol>
-<li><p>Jedis是一款java操作Redis数据库的工具，类似于JDBC</p>
-</li>
-<li><p>使用步骤：</p>
-<ol>
-<li>下载、导入jar包</li>
-<li>使用</li>
-</ol>
-</li>
-<li><p>使用Demo</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 获取连接, 如果使用的是空参数的构造，那么默认就是localhost和6379</span></span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>, <span class="number">6379</span>);</span><br><span class="line">    <span class="comment">// 操作</span></span><br><span class="line">    jedis.set(<span class="string">"username"</span>, <span class="string">"David"</span>);</span><br><span class="line"></span><br><span class="line">    String username = jedis.get(<span class="string">"username"</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(username);<span class="comment">// David</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 可以使用方法setex来存储指定的过期时间的key value</span></span><br><span class="line">    jedis.setex(<span class="string">"activeCode"</span>, <span class="number">20</span>, <span class="string">"didi"</span>);<span class="comment">// 20秒后键activeCode、值didi就被自动删除</span></span><br><span class="line">    <span class="comment">// 关闭连接</span></span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Jedis连接池</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test5() &#123;</span><br><span class="line">    // 创建一个配置对象</span><br><span class="line">    JedisPoolConfig config = new JedisPoolConfig();</span><br><span class="line">    config.setMaxTotal(50);// 最大的允许连接数量</span><br><span class="line">    config.setMaxIdle(10);// 最大的空闲连接数</span><br><span class="line"></span><br><span class="line">    // 创建一个JedisPool连接池对象</span><br><span class="line">    JedisPool jedisPool = new JedisPool(config, &quot;localhost&quot;, 6379);</span><br><span class="line"></span><br><span class="line">    // 获取连接</span><br><span class="line">    Jedis jedis = jedisPool.getResource();</span><br><span class="line"></span><br><span class="line">    // 使用</span><br><span class="line">    jedis.set(&quot;username&quot;, &quot;Tom&quot;);</span><br><span class="line"></span><br><span class="line">    // 归还连接给连接池</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/Lunix基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="酒徒">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酒徒">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/28/Lunix基础/" itemprop="url">Lunix基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T22:42:22+08:00">
-                2019-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="一、linux的应用领域"><a href="#一、linux的应用领域" class="headerlink" title="一、linux的应用领域"></a>一、linux的应用领域</h2><ol>
-<li>基于linux的企业服务器：很多公司使用Linux作为服务端系统</li>
-<li>嵌入式应用：安卓、智能家居、银行系统等</li>
-<li>Linux在电影娱乐业的应用</li>
-</ol>
-<h2 id="二、常用命令"><a href="#二、常用命令" class="headerlink" title="二、常用命令"></a>二、常用命令</h2><p><strong>命令基本格式：</strong>命令 [-选项] [参数]，例如：ls -la /usr</p>
-<p>当有多个选项，可以写在一起</p>
-<h3 id="1-目录、文件处理命令"><a href="#1-目录、文件处理命令" class="headerlink" title="1. 目录、文件处理命令"></a>1. 目录、文件处理命令</h3><ol>
-<li><strong>ls</strong>：-l（long，显示详细信息）；-h（human，大小按kb、MB显示）；-a（显示隐藏文件）；-d（显示目录本身而非目录下文件的信息）</li>
-<li><strong>mkdir：</strong>-p（递归创建，可以创建中间尚未存在的目录）</li>
-<li><strong>pwd：</strong>打印当前目录的路径</li>
-<li><strong>rmdir：</strong>删除空目录；-r（）</li>
-<li><strong>cp</strong>：cp 源文件 目标目录；-p（保存文件的属性，如修改时间等）；-r（复制目录）；</li>
-<li><strong>mv</strong>：移动，移动目录不用加-r选项</li>
-<li><strong>rm：</strong>-r（删除目录）；-f（强制删除）；</li>
-<li><strong>touch：</strong>创建文件</li>
-<li><strong>cat：</strong>查看文件；-n（查看的时候可以显示行号）</li>
-<li><strong>more：</strong>查看文件，回车（翻页）；空格（换行）；q（退出）</li>
-<li><strong>less：</strong>查看文件，可以向上翻页</li>
-<li><strong>head：</strong>查看文件 hean -n 20 filename（查看前20行）</li>
-<li><strong>tail：</strong>和head类似，查看文件末尾</li>
-</ol>
-<h3 id="2-更改文件权限"><a href="#2-更改文件权限" class="headerlink" title="2. 更改文件权限"></a>2. 更改文件权限</h3><ol>
-<li><p><strong>chmod：</strong>读r、写w、执行x三种权限用数字4、2、1表示，如 chmod 777 filename，表示所有用户拥有所有权限</p>
-<p>权限对于文件和目录的含义不同：对于文件来说<strong>写w</strong>是修改文件，对于目录来说<strong>写w</strong>是在目录里创建删除目录（文件）</p>
-</li>
-<li><p><strong>chown：</strong>改变文件的所有者。chown 用户 文件或者目录（将文件的所有这改为新的所有者）</p>
-</li>
-<li><p><strong>chgrp：</strong>改变文件的所属组。chown 用户组 文件或者目录；</p>
-</li>
-<li><p><strong>umask：</strong>查看默认的创建文件、目录的权限</p>
-</li>
-</ol>
-<h3 id="3-文件搜索命令"><a href="#3-文件搜索命令" class="headerlink" title="3. 文件搜索命令"></a>3. 文件搜索命令</h3><ol>
-<li><h3 id="find：find-搜索范围-匹配条件"><a href="#find：find-搜索范围-匹配条件" class="headerlink" title="find：find [搜索范围] [匹配条件]"></a><strong>find：</strong>find [搜索范围] [匹配条件]</h3><ul>
-<li>-name：匹配条件为文件名，*匹配任意字符串，？匹配任意单个字符，<code>find /etc -name init</code></li>
-<li>-iname：不区分大小写的文件名</li>
-<li>-size：+n（文件大小大于），-n（文件大小小于），=n（文件大小等于）</li>
-<li>-amin：匹配条件为访问时间，在/etc目录下查找5分钟内被访问过的文件 <code>find /etc -amin -5</code></li>
-<li>-mmin：匹配条件为修改时间，在/etc目录下查找30分钟内被修改过的文件 `find /etc -mmin -30</li>
-<li>-type：匹配条件为文件类型，f表示文件，d表示目录</li>
-<li>-a：当有多个查询条件时，使用-a连接，表示and</li>
-<li>-o：当有多个查询条件时，使用-o连接，表示or</li>
-</ul>
-</li>
-<li><h4 id="locate：类似于everything"><a href="#locate：类似于everything" class="headerlink" title="locate：类似于everything"></a><strong>locate：</strong>类似于everything</h4><ul>
-<li>-i：不区分大小写</li>
-<li>updatdb：更新文件资料库</li>
-</ul>
-</li>
-<li><h4 id="grep：在文件内容中查找"><a href="#grep：在文件内容中查找" class="headerlink" title="grep：在文件内容中查找"></a>grep：在文件内容中查找</h4><ul>
-<li><code>sudo grep mysql /root/install.log</code></li>
-<li>-v：排除包含指定字符的行，如排除以#开始的行（也就是注释行）<code>grep -v ^# mysql /root/install.log</code></li>
-</ul>
-</li>
-<li><h4 id="man：命令的帮助信息"><a href="#man：命令的帮助信息" class="headerlink" title="man：命令的帮助信息"></a>man：命令的帮助信息</h4><ul>
-<li>man ls：查看ls的帮助信息</li>
-</ul>
-</li>
-</ol>
-<h3 id="4-关机重启命令"><a href="#4-关机重启命令" class="headerlink" title="4.关机重启命令"></a>4.关机重启命令</h3><ol>
-<li>shutdown：-r(重启)、-h(重启)、-c(取消前一个关机重启命令)</li>
-</ol>
-<p>#### </p>
-<h3 id="5-打包压缩命令"><a href="#5-打包压缩命令" class="headerlink" title="5. 打包压缩命令"></a>5. 打包压缩命令</h3><ol>
-<li><p>打包压缩为.tar.gz</p>
-<p>tar -zcvf     打包压缩后的文件名 要打包压缩的文件</p>
-<p>tar -zcvf xxx1.tar.gz a.txt b.python c.cpp dir1 dir2</p>
-<p>tar -zcvf /usr/*</p>
-</li>
-<li><p>解压缩，-C 加解压后文件的位置</p>
-<p>tar -xvf 压缩包</p>
-<p>tar -xvf xxx.tar.gz(解压缩后放在当前目录)</p>
-<p>tar -xvf xxx.tar.gz -C ~/Desktop(解压缩后放在Desktop)</p>
-</li>
-<li><p>zip压缩解压缩</p>
-<p>压缩：zip -r xxx.zip ./*，将当前录下所有文件包括目录压缩为xxx.zip</p>
-<p>解压缩：unzip -o -d ~/Desktop/dir xxx.zip，将xxx.zip解压到桌面下的dir目录，并且重复了（-o）也不提示就覆盖</p>
-</li>
-</ol>
-<h3 id="5-vim常用操作、技巧"><a href="#5-vim常用操作、技巧" class="headerlink" title="5. vim常用操作、技巧"></a>5. vim常用操作、技巧</h3><ol>
-<li><h4 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h4><ul>
-<li><p>插入命令：</p>
-<hr>
-</li>
-</ul>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:left">插入位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">i</td>
-<td style="text-align:left">在光标所在字符前插入</td>
-</tr>
-<tr>
-<td style="text-align:center">I</td>
-<td style="text-align:left">在光标所在行首插入</td>
-</tr>
-<tr>
-<td style="text-align:center">o</td>
-<td style="text-align:left">在光标下一行插入新行</td>
-</tr>
-<tr>
-<td style="text-align:center">O</td>
-<td style="text-align:left">在光标下一行插入新行</td>
-</tr>
-<tr>
-<td style="text-align:center">a</td>
-<td style="text-align:left">在光标所在字符后插入</td>
-</tr>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:left">在光标所在行尾插入</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>定位命令：</p>
-<hr>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">：set nu</td>
-<td style="text-align:left">设置行号</td>
-</tr>
-<tr>
-<td style="text-align:center">：set nonu</td>
-<td style="text-align:left">取消行号</td>
-</tr>
-<tr>
-<td style="text-align:center">x</td>
-<td style="text-align:left">删除光标所在处字符</td>
-</tr>
-<tr>
-<td style="text-align:center">nx</td>
-<td style="text-align:left">删除光标所在处后n个字符</td>
-</tr>
-<tr>
-<td style="text-align:center">dd</td>
-<td style="text-align:left">删除光标所在行</td>
-</tr>
-<tr>
-<td style="text-align:center">ndd</td>
-<td style="text-align:left">删除n行</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:left">删除光标所在处到行尾内容</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>复制剪切命令：</p>
-<hr>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">yy</td>
-<td style="text-align:left">复制当前行</td>
-</tr>
-<tr>
-<td style="text-align:center">nyy</td>
-<td style="text-align:left">复制当前行以下n行</td>
-</tr>
-<tr>
-<td style="text-align:center">dd</td>
-<td style="text-align:left">剪切当前行</td>
-</tr>
-<tr>
-<td style="text-align:center">ndd</td>
-<td style="text-align:left">剪切当前行以下n行</td>
-</tr>
-<tr>
-<td style="text-align:center">p、P</td>
-<td style="text-align:left">粘贴在当前行上、或者行下</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>取消和替换：</p>
-<hr>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">u</td>
-<td style="text-align:left">取消上一步操作</td>
-</tr>
-<tr>
-<td style="text-align:center">R</td>
-<td style="text-align:left">从光标所在处开始替换，知道按esc</td>
-</tr>
-<tr>
-<td style="text-align:center">r</td>
-<td style="text-align:left">替换光标所在字符</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>查找：</p>
-<hr>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">/string</td>
-<td style="text-align:left">搜索指定字符串，如果要忽略大小写先输入命令 :set ic</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>退出和保存：</p>
-<hr>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">:w</td>
-<td style="text-align:left">保存修改</td>
-</tr>
-<tr>
-<td style="text-align:center">:w new_filename</td>
-<td style="text-align:left">另存为新文件</td>
-</tr>
-<tr>
-<td style="text-align:center">:wq</td>
-<td style="text-align:left">保存修改并退出</td>
-</tr>
-<tr>
-<td style="text-align:center">:q!</td>
-<td style="text-align:left">不保存修改退出</td>
-</tr>
-<tr>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:left">快捷键，保存修改并退出</td>
-</tr>
-</tbody>
-</table>
-<p>​     </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -927,9 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/28/struts2/" itemprop="url">struts2</a></h1>
+          <h1 class="post-title" itemprop="name headline">struts2</h1>
         
 
         <div class="post-meta">
@@ -979,9 +336,7 @@
       
 
       
-        
-          
-            <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括：</p>
+        <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括：</p>
 <p>M：Model，用于封装数据，javabean</p>
 <p>V：View，用于展示数据，jsp</p>
 <p>C：Controller，控制程序的流程，servlet、filter</p>
@@ -1234,8 +589,6 @@
 </tbody>
 </table>
 
-          
-        
       
     </div>
     
@@ -1250,14 +603,36 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/28/Lunix基础/" rel="prev" title="Lunix基础">
+                Lunix基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -1267,10 +642,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1278,6 +654,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1298,8 +678,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1350,6 +739,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、介绍"><span class="nav-number">1.</span> <span class="nav-text">一、介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、使用"><span class="nav-number">2.</span> <span class="nav-text">二、使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、处理的过程"><span class="nav-number">3.</span> <span class="nav-text">三、处理的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、struts配置文件加载的顺序"><span class="nav-number">4.</span> <span class="nav-text">四、struts配置文件加载的顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、struts-xml配置文件的元素"><span class="nav-number">5.</span> <span class="nav-text">五、struts.xml配置文件的元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-package元素，表示包，相关属性如下"><span class="nav-number">5.1.</span> <span class="nav-text">1. package元素，表示包，相关属性如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-namespace的查找规则"><span class="nav-number">5.2.</span> <span class="nav-text">2. namespace的查找规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-action元素，用于配置动作，处理请求路径，属性如下："><span class="nav-number">5.3.</span> <span class="nav-text">3. action元素，用于配置动作，处理请求路径，属性如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-result元素"><span class="nav-number">5.4.</span> <span class="nav-text">4. result元素</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1490,6 +895,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
