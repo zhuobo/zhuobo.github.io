@@ -83,18 +83,18 @@
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="struts2">
-<meta property="og:url" content="http://yoursite.com/2019/05/28/struts2/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/29/struts2/index.html">
 <meta property="og:site_name" content="酒徒">
 <meta property="og:description" content="一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的相关jar包  在src目录下创建 struts.xml,配置如下 123456789101112">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/05/28/struts2/struts流程图.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/28/struts2/Struts2-Architecture.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/28/struts2/错误信息.png">
-<meta property="og:updated_time" content="2019-05-29T15:36:18.452Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/struts流程图.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/Struts2-Architecture.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/错误信息.png">
+<meta property="og:updated_time" content="2019-05-30T13:15:20.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts2">
 <meta name="twitter:description" content="一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的相关jar包  在src目录下创建 struts.xml,配置如下 123456789101112">
-<meta name="twitter:image" content="http://yoursite.com/2019/05/28/struts2/struts流程图.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/29/struts2/struts流程图.png">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/28/struts2/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/29/struts2/">
 
 
 
@@ -279,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/struts2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/struts2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="酒徒">
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T22:42:22+08:00">
-                2019-05-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-29T22:42:22+08:00">
+                2019-05-29
               </time>
             
 
@@ -395,10 +395,10 @@
 <li><p>根据method指定的方法返回的字符串 “success” 找到对应name为success的result标签，将success.jsp转为静态页面响应回客户端</p>
 </li>
 <li><p>struts流程图：</p>
-<img src="/2019/05/28/struts2/struts流程图.png">
+<img src="/2019/05/29/struts2/struts流程图.png">
 </li>
 <li><p>struts架构图，解释了struts处理请求的过程</p>
-<img src="/2019/05/28/struts2/Struts2-Architecture.png">
+<img src="/2019/05/29/struts2/Struts2-Architecture.png">
 
 </li>
 </ol>
@@ -497,7 +497,7 @@
 <p><code>&lt;constant name=&quot;struts.devMode&quot; value=&quot;true&quot;&gt;&lt;/constant&gt;</code></p>
 </li>
 </ol>
-<img src="/2019/05/28/struts2/错误信息.png">
+<img src="/2019/05/29/struts2/错误信息.png">
 
 <h2 id="五、struts-xml配置文件的元素"><a href="#五、struts-xml配置文件的元素" class="headerlink" title="五、struts.xml配置文件的元素"></a>五、struts.xml配置文件的元素</h2><h3 id="1-package元素，表示包，相关属性如下"><a href="#1-package元素，表示包，相关属性如下" class="headerlink" title="1. package元素，表示包，相关属性如下"></a>1. package元素，表示包，相关属性如下</h3><table>
 <thead>
@@ -640,7 +640,11 @@
 
 </li>
 </ol>
-<h3 id="5-自定义一个结果视图（result的type类型）"><a href="#5-自定义一个结果视图（result的type类型）" class="headerlink" title="5. 自定义一个结果视图（result的type类型）"></a>5. 自定义一个结果视图（result的type类型）</h3>
+<h3 id="5-自定义一个结果视图（result的type类型）"><a href="#5-自定义一个结果视图（result的type类型）" class="headerlink" title="5. 自定义一个结果视图（result的type类型）"></a>5. 自定义一个结果视图（result的type类型）</h3><p>结果类型就是一个类，这些结果类型的类都是实现了 <code>com.opensymphony.xwork2.Result</code>接口，或者是继承了这个接口的实现类 <code>org.apache.struts2.dispatcher.StrutsResultSupport</code>。这些类都有一个 <code>doExecute</code>方法，用于执行结果视图。struts的内部本质上就是一个servlet，因此可以自定义一个结果视图，只要提供实现 <code>Result</code>接口，复写doExecute方法即可。下面举一个用于输出验证码的结果类型的例子：</p>
+<ol>
+<li>定义一个类 <code>CAPTCHAResult</code></li>
+</ol>
+
       
     </div>
     
@@ -670,15 +674,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/28/Lunix基础/" rel="next" title="Lunix基础">
+                <i class="fa fa-chevron-left"></i> Lunix基础
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/28/Lunix基础/" rel="prev" title="Lunix基础">
-                Lunix基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
