@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/checkcode.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/intercept.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/29/struts2/img7.png">
-<meta property="og:updated_time" content="2019-06-01T11:07:28.646Z">
+<meta property="og:updated_time" content="2019-06-01T11:37:54.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts2">
 <meta name="twitter:description" content="一、介绍Struts2是Apache发行MVC开源框架，也就是表现层框架。MVC包括： M：Model，用于封装数据，javabean V：View，用于展示数据，jsp C：Controller，控制程序的流程，servlet、filter 二、使用 创建一个javaweb项目，导入Struts2的相关jar包  在src目录下创建 struts.xml,配置如下 123456789101112">
@@ -713,7 +713,7 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">"struts-user.xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">"struts-order.xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">"struts-pay.xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="八、Action接收请求参数"><a href="#八、Action接收请求参数" class="headerlink" title="八、Action接收请求参数"></a>八、Action接收请求参数</h2><ol>
-<li><p>通过servlet获取</p>
+<li><p>通过servlet获取，先获取request对象</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        HttpServletRequest request = ServletActionContext.getRequest();</span><br><span class="line">        String username = request.getParameter(<span class="string">"username"</span>);</span><br><span class="line">        String password = request.getParameter(<span class="string">"password"</span>);</span><br><span class="line">        System.out.println(username);</span><br><span class="line">        System.out.println(password);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> NONE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过Action属性的setter方法注入</p>
