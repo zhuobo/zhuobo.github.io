@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Web,">
+  <meta name="keywords" content="struts2,">
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="一、概念Redis是一款高性能的NOSQL系列（NoSQL = Not Only SQL ）的数据库 1.1.什么是NOSQL​        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。​        随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的w">
-<meta name="keywords" content="Web">
+<meta name="description" content="一、struts的表单标签 在jsp页面引入struts标签 1&amp;lt;%@ taglib uri=&quot;/struts-tags&quot; prefix=&quot;s&quot;%&amp;gt;  使用form标签 1234567891011121314151617&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;title&amp;gt;register&amp;lt;/title&amp;gt;    &amp;lt;s:head&amp;gt;&amp;lt">
+<meta name="keywords" content="struts2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis">
-<meta property="og:url" content="http://yoursite.com/2019/05/28/Redis/index.html">
+<meta property="og:title" content="struts2表单校验">
+<meta property="og:url" content="http://yoursite.com/2019/06/02/struts2表单校验/index.html">
 <meta property="og:site_name" content="酒徒">
-<meta property="og:description" content="一、概念Redis是一款高性能的NOSQL系列（NoSQL = Not Only SQL ）的数据库 1.1.什么是NOSQL​        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。​        随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的w">
+<meta property="og:description" content="一、struts的表单标签 在jsp页面引入struts标签 1&amp;lt;%@ taglib uri=&quot;/struts-tags&quot; prefix=&quot;s&quot;%&amp;gt;  使用form标签 1234567891011121314151617&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;title&amp;gt;register&amp;lt;/title&amp;gt;    &amp;lt;s:head&amp;gt;&amp;lt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-01T11:07:23.122Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/02/struts2表单校验/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/02/struts2表单校验/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/02/struts2表单校验/3.png">
+<meta property="og:updated_time" content="2019-06-02T13:14:41.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="一、概念Redis是一款高性能的NOSQL系列（NoSQL = Not Only SQL ）的数据库 1.1.什么是NOSQL​        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。​        随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的w">
+<meta name="twitter:title" content="struts2表单校验">
+<meta name="twitter:description" content="一、struts的表单标签 在jsp页面引入struts标签 1&amp;lt;%@ taglib uri=&quot;/struts-tags&quot; prefix=&quot;s&quot;%&amp;gt;  使用form标签 1234567891011121314151617&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;title&amp;gt;register&amp;lt;/title&amp;gt;    &amp;lt;s:head&amp;gt;&amp;lt">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/02/struts2表单校验/1.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/28/Redis/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/02/struts2表单校验/">
 
 
 
 
 
-  <title>Redis | 酒徒</title>
+  <title>struts2表单校验 | 酒徒</title>
   
 
 
@@ -285,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/Redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/02/struts2表单校验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="酒徒">
@@ -302,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Redis</h1>
+          <h1 class="post-title" itemprop="name headline">struts2表单校验</h1>
         
 
         <div class="post-meta">
@@ -314,8 +318,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-28T00:50:09+08:00">
-                2019-05-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-02T10:47:36+08:00">
+                2019-06-02
               </time>
             
 
@@ -374,134 +378,55 @@
       
 
       
-        <h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><p>Redis是一款高性能的NOSQL系列（<strong>NoSQL = Not Only SQL</strong> ）的数据库</p>
-<h3 id="1-1-什么是NOSQL"><a href="#1-1-什么是NOSQL" class="headerlink" title="1.1.什么是NOSQL"></a>1.1.什么是NOSQL</h3><p>​        NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。<br>​        随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</p>
-<p>​    1.1.1.    NOSQL和关系型数据库比较<br>​        优点：<br>​            1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。<br>​            2）查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。<br>​            3）存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。<br>​            4）扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</p>
-<p>​        缺点：<br>​            1）维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。<br>​            2）不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。<br>​            3）不提供关系型数据库对事务的处理。</p>
-<p>​    1.1.2.    非关系型数据库的优势：</p>
-<p>​        1）性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。<br>​        2）可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</p>
-<p>​    1.1.3.    关系型数据库的优势：<br>​        1）复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。<br>​        2）事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</p>
-<p>​    1.1.4.    总结<br>​        关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，<br>​        让NoSQL数据库对关系型数据库的不足进行弥补。<br>​        <strong>一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据</strong></p>
-<h3 id="1-2-主流的NOSQL产品"><a href="#1-2-主流的NOSQL产品" class="headerlink" title="1.2.主流的NOSQL产品"></a>1.2.主流的NOSQL产品</h3><p>​    •    键值(Key-Value)存储数据库<br>​            相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB<br>​            典型应用： 内容缓存，主要用于处理大量数据的高访问负载。<br>​            数据模型： 一系列键值对<br>​            优势： 快速查询<br>​            劣势： 存储的数据缺少结构化<br>​    •    列存储数据库<br>​            相关产品：Cassandra, HBase, Riak<br>​            典型应用：分布式的文件系统<br>​            数据模型：以列簇式存储，将同一列数据存在一起<br>​            优势：查找速度快，可扩展性强，更容易进行分布式扩展<br>​            劣势：功能相对局限<br>​    •    文档型数据库<br>​            相关产品：CouchDB、MongoDB<br>​            典型应用：Web应用（与Key-Value类似，Value是结构化的）<br>​            数据模型： 一系列键值对<br>​            优势：数据结构要求不严格<br>​            劣势： 查询性能不高，而且缺乏统一的查询语法<br>​    •    图形(Graph)数据库<br>​            相关数据库：Neo4J、InfoGrid、Infinite Graph<br>​            典型应用：社交网络<br>​            数据模型：图结构<br>​            优势：利用图结构相关算法。<br>​            劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</p>
-<h3 id="1-3-什么是Redis"><a href="#1-3-什么是Redis" class="headerlink" title="1.3 什么是Redis"></a>1.3 什么是Redis</h3><p>​    Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，官方提供测试数据，50个并发执行100000个请求,读的速度是110000次/s,写的速度是81000次/s ，且Redis通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：<br>​        1) 字符串类型 string<br>​        2) 哈希类型 hash<br>​        3) 列表类型 list<br>​        4) 集合类型 set<br>​        5) 有序集合类型 sortedset<br>​    1.3.1 redis的应用场景<br>​        •    缓存（数据查询、短连接、新闻内容、商品内容等等）<br>​        •    聊天室的在线好友列表<br>​        •    任务队列。（秒杀、抢购、12306等等）<br>​        •    应用排行榜<br>​        •    网站访问统计<br>​        •    数据过期处理（可以精确到毫秒<br>​        •    分布式集群架构中的session分离</p>
-<h2 id="二、命令操作"><a href="#二、命令操作" class="headerlink" title="二、命令操作"></a>二、命令操作</h2><h3 id="1-Redis的数据结构"><a href="#1-Redis的数据结构" class="headerlink" title="1. Redis的数据结构"></a>1. Redis的数据结构</h3><p>Redis存储的是键值对，key<strong>都是字符串</strong>，value可以有<strong>5种</strong>不同的类型数据：</p>
+        <h2 id="一、struts的表单标签"><a href="#一、struts的表单标签" class="headerlink" title="一、struts的表单标签"></a>一、struts的表单标签</h2><ol>
+<li><p>在jsp页面引入struts标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"/struts-tags"</span> <span class="attr">prefix</span>=<span class="string">"s"</span>%&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用form标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>register<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">s:head</span>&gt;</span><span class="tag">&lt;/<span class="name">s:head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">s:form</span> <span class="attr">action</span>=<span class="string">"user/register.do"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:textfield</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">label</span>=<span class="string">"用户名"</span> <span class="attr">requiredLabel</span>=<span class="string">"true"</span> <span class="attr">requiredPosition</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">s:textfield</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:password</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">label</span>=<span class="string">"密码"</span> <span class="attr">requiredLabel</span>=<span class="string">"true"</span> <span class="attr">requiredPosition</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">s:password</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:textfield</span> <span class="attr">name</span>=<span class="string">"birthday"</span> <span class="attr">label</span>=<span class="string">"生日"</span>&gt;</span><span class="tag">&lt;/<span class="name">s:textfield</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:checkboxlist</span> <span class="attr">list</span>=<span class="string">"#&#123;'篮球':'篮球','足球':'足球','泡妞':'泡妞'&#125;"</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">label</span>=<span class="string">"爱好"</span>&gt;</span><span class="tag">&lt;/<span class="name">s:checkboxlist</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:radio</span> <span class="attr">list</span>=<span class="string">"#&#123;'true':'已婚', 'false':'未婚'&#125;"</span> <span class="attr">name</span>=<span class="string">"married"</span> <span class="attr">label</span>=<span class="string">"是否已婚"</span>&gt;</span><span class="tag">&lt;/<span class="name">s:radio</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">s:submit</span> <span class="attr">value</span>=<span class="string">"注册"</span>&gt;</span><span class="tag">&lt;/<span class="name">s:submit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">s:form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>显示效果如下：</p>
+<img src="/2019/06/02/struts2表单校验/1.png">
+
+<p><strong>struts表单的优点：</strong></p>
 <ol>
-<li>字符串 string</li>
-<li>哈希类型 hash：map格式，可以存储键值对</li>
-<li>列表类型 list：linkedlist格式，元素可以重复</li>
-<li>集合类型 set 元素不可以重复</li>
-<li>有序集合类型 sortedset 元素可以重复而且有序</li>
-</ol>
-<h3 id="2-Redis命令操作"><a href="#2-Redis命令操作" class="headerlink" title="2. Redis命令操作"></a>2. Redis命令操作</h3><ol>
-<li><p><strong>字符串string</strong></p>
-<ol>
-<li>存储：set key value</li>
-<li>获取：get key</li>
-<li>删除：del key</li>
+<li>自带了一定了样式，比如对齐</li>
+<li>方便标记字段是否为必须填写</li>
+<li>方便数据的回显</li>
+<li>方便显示校验的信息</li>
 </ol>
 </li>
-<li><p><strong>哈希类型 hash</strong></p>
-<ol>
-<li><p>存储：hset key field value</p>
-</li>
-<li><p>获取：</p>
-<ol>
-<li>hget key field：获取指定的field对应的值</li>
-<li>hgetall key：获取所有的field和value</li>
 </ol>
-</li>
-<li><p>删除：hdel key field</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hset myhash username Tom</span><br><span class="line">hset myhash age 18</span><br><span class="line"></span><br><span class="line">hget myhash age -- 18</span><br></pre></td></tr></table></figure>
+<h2 id="二、struts的表单在Action校验"><a href="#二、struts的表单在Action校验" class="headerlink" title="二、struts的表单在Action校验"></a>二、struts的表单在Action校验</h2><ol>
+<li><p>在提交表单的Action（继承了ActionSupport类）的覆盖重写方法<code>validate</code>,这是一个全局的方法,也就是在该Action里的任何方法要执行，就要首先执行这个 <code>validate</code>方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">validate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(user.getUsername())) &#123;</span><br><span class="line">        addFieldError(<span class="string">"username"</span>, <span class="string">"用户名不能为空"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// 相当于if(user.getPassword() == null || "".equals(user.getPassword()))</span></span><br><span class="line">	<span class="comment">// 这个工具类封装了这一行代码......</span></span><br><span class="line">    <span class="keyword">if</span> (StringUtils.isEmpty(user.getPassword())) &#123;</span><br><span class="line">        addFieldError(<span class="string">"password"</span>, <span class="string">"密码不能为空"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 
 </li>
 </ol>
-</li>
-<li><p><strong>列表类型 list</strong>：可以添加一个元素到列表的头部（左）或者尾部（右）</p>
-<ol>
-<li><p>存储：</p>
-<ol>
-<li>lpush key value：将元素加入列表<strong>左边</strong></li>
-<li>rpush key value：将元素加入列表<strong>右边</strong></li>
-</ol>
-</li>
-<li><p>获取：</p>
-<ol>
-<li>lrange key start end：范围获取</li>
-</ol>
-</li>
-<li><p>删除：</p>
-<ol>
-<li>lpop：删除最左边元素，并返回该元素</li>
-<li>rpop：删除最右边元素，并返回该元素</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lpush mylist a</span><br><span class="line">lpush mylist b</span><br><span class="line">lpush mylist c -- a-&gt;b-&gt;c</span><br><span class="line"></span><br><span class="line">lrange mylist 0 -1 -- 获取mylist所有的元素</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><strong>集合类型 set</strong></p>
-<ol>
-<li>存储：sadd key value</li>
-<li>获取：smembers key：获取集合中所有的元素</li>
-<li>删除：srem key value：删除集合中某个元素</li>
-</ol>
-</li>
-<li><p><strong>有序集合类型 sortedset</strong></p>
-<ol>
-<li><p>存储：zadd key score value</p>
-</li>
-<li><p>获取：zrange key start end（withscores）</p>
-</li>
-<li><p>删除：zrem key value</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 127.0.0.1:6379&gt;zadd sorted 10 aaa</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd sorted 30 bbb</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd sorted 20 ccc</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zrange sorted 0 -1</span><br><span class="line">// 按照分数（score）排序</span><br><span class="line">1) &quot;aaa&quot;</span><br><span class="line">2) &quot;ccc&quot;</span><br><span class="line">3) &quot;bbb&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p><strong>常用的通用命令：</strong></p>
-<ol>
-<li>keys *：查询所有的键</li>
-<li>type key：获取键对应的value的类型</li>
-<li>del key：删除指定的key以及该key对应的value</li>
-</ol>
-</li>
-</ol>
-<h2 id="三、Redis持久化"><a href="#三、Redis持久化" class="headerlink" title="三、Redis持久化"></a>三、Redis持久化</h2><p>Redis是一个基于内存的数据库，因此当Redis服务器重启会导致数据丢失，可以将Redis数据库的数据存储到硬盘。</p>
-<h3 id="1-Redis持久化机制"><a href="#1-Redis持久化机制" class="headerlink" title="1. Redis持久化机制"></a>1. Redis持久化机制</h3><ol>
-<li><p><strong>RDB:</strong> 默认方式，不需要进行配置，默认使用的机制，在一定的时间间隔内，检测key的变化情况，然后持久化数据</p>
-<ol>
-<li><p>编辑配置文件：redis.windows.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#   after 900 sec (15 min) if at least 1 key changed</span><br><span class="line">#   after 300 sec (5 min) if at least 10 keys changed</span><br><span class="line">#   after 60 sec if at least 10000 keys changed</span><br><span class="line"></span><br><span class="line">save 900 1</span><br><span class="line">save 300 10</span><br><span class="line">save 60 10000</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新启动Redis服务器，并且指定配置文件:$ redis-server.exe redis.windows.conf</p>
-</li>
-</ol>
-</li>
-</ol>
+<p>由于<code>validate</code>方法是一个全局的方法，因此Action里所有的方法执行之前都会先执行该方法，但是如果是这样又有着明显的不合理，总能不能什么方法都要执行校验用户名、密码的逻辑。因此可以在不需要执行<code>validate</code>方法的方法上加上注解<code>@SkipValidation</code>，表示该方法跳过跳过<code>validate</code>方法的验证。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SkipValidation</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"list"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   如果输入用户名密码为空，就会提示：</p>
+   <img src="/2019/06/02/struts2表单校验/2.png">
+
+
 <ol start="2">
-<li><p><strong>AOF:</strong> 记录日志的方式，可以记录每一条操作的命令，操作命令后就持久化数据（这样的效果和mysql类似了）</p>
-<ol>
-<li><p>编辑配置文件：redis.windows.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 开启aof模式</span><br><span class="line">appendonly no --&gt; appendonly yes</span><br><span class="line"></span><br><span class="line"># aof模式下的三种持久化方式</span><br><span class="line"></span><br><span class="line"># appendfsync always # 总是，每一条操作都持久化</span><br><span class="line">appendfsync everysec # 每间隔1s进行一次持久化</span><br><span class="line"># appendfsync no # 不进行持久化</span><br></pre></td></tr></table></figure>
+<li><p>此外还可以为每个方法写一个验证的方法，这种就是局部的验证方法，方法命名为 <code>validate</code>方法名(方法名首字符大写)，如有一个list方法，那么就写一个<code>validateList</code>方法专门验证<code>list</code>方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 专门验证register方法的validate方法</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">validateRegister</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (StringUtils.isEmpty(user.getUsername())) &#123;</span><br><span class="line">           addFieldError(<span class="string">"username"</span>, <span class="string">"用户名不能为空"</span>);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (StringUtils.isEmpty(user.getPassword())) &#123;</span><br><span class="line">           addFieldError(<span class="string">"password"</span>, <span class="string">"密码不能为空"</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">register</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       System.out.println(user);</span><br><span class="line"></span><br><span class="line">       <span class="comment">//调用service注册</span></span><br><span class="line">       userService.register(user);</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> NONE;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-</li>
-</ol>
-<h2 id="四、Java客户端Jedis"><a href="#四、Java客户端Jedis" class="headerlink" title="四、Java客户端Jedis"></a>四、Java客户端Jedis</h2><ol>
-<li><p>Jedis是一款java操作Redis数据库的工具，类似于JDBC</p>
-</li>
-<li><p>使用步骤：</p>
-<ol>
-<li>下载、导入jar包</li>
-<li>使用</li>
-</ol>
-</li>
-<li><p>使用Demo</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 获取连接, 如果使用的是空参数的构造，那么默认就是localhost和6379</span></span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>, <span class="number">6379</span>);</span><br><span class="line">    <span class="comment">// 操作</span></span><br><span class="line">    jedis.set(<span class="string">"username"</span>, <span class="string">"David"</span>);</span><br><span class="line"></span><br><span class="line">    String username = jedis.get(<span class="string">"username"</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(username);<span class="comment">// David</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 可以使用方法setex来存储指定的过期时间的key value</span></span><br><span class="line">    jedis.setex(<span class="string">"activeCode"</span>, <span class="number">20</span>, <span class="string">"didi"</span>);<span class="comment">// 20秒后键activeCode、值didi就被自动删除</span></span><br><span class="line">    <span class="comment">// 关闭连接</span></span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Jedis连接池</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建一个配置对象</span></span><br><span class="line">    JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">    config.setMaxTotal(<span class="number">50</span>);<span class="comment">// 最大的允许连接数量</span></span><br><span class="line">    config.setMaxIdle(<span class="number">10</span>);<span class="comment">// 最大的空闲连接数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个JedisPool连接池对象</span></span><br><span class="line">    JedisPool jedisPool = <span class="keyword">new</span> JedisPool(config, <span class="string">"localhost"</span>, <span class="number">6379</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取连接</span></span><br><span class="line">    Jedis jedis = jedisPool.getResource();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用</span></span><br><span class="line">    jedis.set(<span class="string">"username"</span>, <span class="string">"Tom"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 归还连接给连接池</span></span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+<h2 id="三、xml配置校验"><a href="#三、xml配置校验" class="headerlink" title="三、xml配置校验"></a>三、xml配置校验</h2><p>在action里为某个Action类写一个配置文件，表示该Action的所有方法都要进行校验，如Action的名为<code>UserAction</code>，则xml的命名为<code>UserAction-validation.xml</code>，该文件的配置为</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 该dtd在xwork-core-2.3.37.jar--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE validators PUBLIC</span></span><br><span class="line"><span class="meta">        "-//Apache Struts//XWork Validator 1.0.3//EN"</span></span><br><span class="line"><span class="meta">        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">validators</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">validator</span> <span class="attr">type</span>=<span class="string">"requiredstring"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"fieldName"</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">message</span>&gt;</span>用户名不能为空-xml<span class="tag">&lt;/<span class="name">message</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">validator</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">validators</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式的配置也是全局的配置，默认Action的每个方法都要执行校验，同时，如果有某些方法不希望执行校验在方法上加上注解 <code>@SkipValidation</code>即可跳过校验。</p>
+<p>当然，也可以为类的某个方法指定校验，这时候xml文件的命名改为 <code>Action类名-方法名-validation.xml</code>，比如可以命名为 <code>UserAction-register-validation.xml</code>。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">validators</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--用户名不能为空--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">validator</span> <span class="attr">type</span>=<span class="string">"requiredstring"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"fieldName"</span>&gt;</span>username<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">message</span>&gt;</span>用户名不能为空-xml<span class="tag">&lt;/<span class="name">message</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">validator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 密码长度至少为8 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">validator</span> <span class="attr">type</span>=<span class="string">"stringlength"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"fieldName"</span>&gt;</span>password<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"minLength"</span>&gt;</span>8<span class="tag">&lt;/<span class="name">param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">message</span>&gt;</span>密码长度至少为8<span class="tag">&lt;/<span class="name">message</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">validator</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">validators</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2019/06/02/struts2表单校验/3.png">
+
 
       
     </div>
@@ -519,7 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i>Web</a>
+            <a href="/tags/struts2/" rel="tag"><i class="fa fa-tag"></i>struts2</a>
           
         </div>
       
@@ -532,15 +457,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/31/struts问题总结/" rel="next" title="struts问题总结">
+                <i class="fa fa-chevron-left"></i> struts问题总结
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/28/Lunix基础/" rel="prev" title="Lunix基础">
-                Lunix基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -690,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、概念"><span class="nav-text">一、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-什么是NOSQL"><span class="nav-text">1.1.什么是NOSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-主流的NOSQL产品"><span class="nav-text">1.2.主流的NOSQL产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-什么是Redis"><span class="nav-text">1.3 什么是Redis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、命令操作"><span class="nav-text">二、命令操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Redis的数据结构"><span class="nav-text">1. Redis的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Redis命令操作"><span class="nav-text">2. Redis命令操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Redis持久化"><span class="nav-text">三、Redis持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Redis持久化机制"><span class="nav-text">1. Redis持久化机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Java客户端Jedis"><span class="nav-text">四、Java客户端Jedis</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、struts的表单标签"><span class="nav-text">一、struts的表单标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、struts的表单在Action校验"><span class="nav-text">二、struts的表单在Action校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、xml配置校验"><span class="nav-text">三、xml配置校验</span></a></li></ol></div>
             
 
           </div>

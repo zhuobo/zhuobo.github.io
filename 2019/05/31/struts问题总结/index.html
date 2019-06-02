@@ -88,7 +88,7 @@
 <meta property="og:description" content="在使用struts2框架的过程中遇到的一些问题的总结： 1. 异常Error setting expression ‘xxx’ with value…  在提交表单的时候遇到的这个问题，其实并不影响应用的运行，但是也还是个异常，根据提示可以发现是 Developer Notification，也就是在struts.xml配置了开发模式，才会提醒这个信息，关闭开发模式便不会提醒。但是问题的根本应该是">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/05/31/struts问题总结/img1.png">
-<meta property="og:updated_time" content="2019-06-01T11:07:19.874Z">
+<meta property="og:updated_time" content="2019-06-02T12:38:06.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts问题总结">
 <meta name="twitter:description" content="在使用struts2框架的过程中遇到的一些问题的总结： 1. 异常Error setting expression ‘xxx’ with value…  在提交表单的时候遇到的这个问题，其实并不影响应用的运行，但是也还是个异常，根据提示可以发现是 Developer Notification，也就是在struts.xml配置了开发模式，才会提醒这个信息，关闭开发模式便不会提醒。但是问题的根本应该是">
@@ -380,6 +380,7 @@
 <h3 id="1-异常Error-setting-expression-‘xxx’-with-value…"><a href="#1-异常Error-setting-expression-‘xxx’-with-value…" class="headerlink" title="1. 异常Error setting expression ‘xxx’ with value…"></a>1. 异常Error setting expression ‘xxx’ with value…</h3><img src="/2019/05/31/struts问题总结/img1.png">
 
 <p>在提交表单的时候遇到的这个问题，其实并不影响应用的运行，但是也还是个异常，根据提示可以发现是 <code>Developer Notification</code>，也就是在struts.xml配置了开发模式，才会提醒这个信息，关闭开发模式便不会提醒。但是问题的根本应该是表单对应的参数，比如username和password在Action类里没有提供对应的setter和getter方法，在Action类中提供了便不会有这个异常的提示。</p>
+<h3 id="2-struts2的自动类型转换"><a href="#2-struts2的自动类型转换" class="headerlink" title="2. struts2的自动类型转换"></a>2. struts2的自动类型转换</h3><p>Servlet接收到的表单提交的数据都是字符串String类型的，但是Struts2会自动进行类型转换，比如可以转为Date类型、boolean类型，如果是CheckBox则会使用<code>逗号,以及空格</code>将选择值拼接为字符串。这样便可以在定义模型（比如User）的时候，成员变量可以直接使用Date类型，boolean类型等，而CheckBox的值也可以不使用字符串数组<code>String[]</code>保存，使用字符串即可。</p>
 
       
     </div>
@@ -419,6 +420,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/02/struts2表单校验/" rel="prev" title="struts2表单校验">
+                struts2表单校验 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -497,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -519,7 +524,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -568,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-异常Error-setting-expression-‘xxx’-with-value…"><span class="nav-text">1. 异常Error setting expression ‘xxx’ with value…</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-异常Error-setting-expression-‘xxx’-with-value…"><span class="nav-text">1. 异常Error setting expression ‘xxx’ with value…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-struts2的自动类型转换"><span class="nav-text">2. struts2的自动类型转换</span></a></li></ol></div>
             
 
           </div>
