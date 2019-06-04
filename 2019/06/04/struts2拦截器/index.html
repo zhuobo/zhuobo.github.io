@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/04/struts2拦截器/1.png">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/04/struts2拦截器/2.png">
-<meta property="og:updated_time" content="2019-06-04T03:50:39.213Z">
+<meta property="og:updated_time" content="2019-06-04T09:23:14.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts2拦截器">
 <meta name="twitter:description" content="一、struts2拦截器介绍struts2的许多功能都是建立在拦截器之上的，比如国际化、转换器、校验等功能。拦截器是动态拦截Action调用的对象，它提供了一种可以使开发者定义在一个Action执行前后执行的代码，也可以在Action执行前阻止其执行。拦截器栈（Interceptor stack），或者说拦截器链（Interceptor China）就是将拦截器按一定的顺序联结成一条链。在访问被拦">
@@ -364,7 +364,38 @@
 <p>拦截器<code>Interceptor</code>的类的继承、实现结构:</p>
 <img src="/2019/06/04/struts2拦截器/2.png">
 
-<h2 id="二、自定义拦截器"><a href="#二、自定义拦截器" class="headerlink" title="二、自定义拦截器"></a>二、自定义拦截器</h2>
+<h2 id="二、自定义拦截器"><a href="#二、自定义拦截器" class="headerlink" title="二、自定义拦截器"></a>二、自定义拦截器</h2><ol>
+<li><p>写一个类继承 <code>AbstractInterceptor</code>类，复写方法 <code>intercept</code>，参数 <code>ActionInvocation</code>对象调用方法 <code>invoke</code>表示放行，<code>invoke</code>方法返回值是字符串 <code>&quot;success&quot;</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">extends</span> <span class="title">AbstractInterceptor</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">intercept</span><span class="params">(ActionInvocation actionInvocation)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"拦截之前前前"</span>);</span><br><span class="line">        <span class="comment">// 放行</span></span><br><span class="line">        String returnStr = actionInvocation.invoke();</span><br><span class="line">        System.out.println(<span class="string">"拦截之后后后"</span>);</span><br><span class="line">        <span class="keyword">return</span> returnStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 <code>struts.xml</code>为Action配置一个拦截器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"interceptor_p"</span> <span class="attr">extends</span>=<span class="string">"struts-default"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">interceptors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">interceptor</span> <span class="attr">name</span>=<span class="string">"interceptor"</span> <span class="attr">class</span>=<span class="string">"cn.zhuobo.web.interceptor.MyInterceptor"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">interceptors</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">name</span>=<span class="string">"hello"</span> <span class="attr">class</span>=<span class="string">"cn.zhuobo.web.action.HelloAction"</span> <span class="attr">method</span>=<span class="string">"sayHello"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 拦截器的引用，name是上面配置的拦截器 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"interceptor"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">name</span>=<span class="string">"success"</span>&gt;</span>/hello.jsp<span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">action</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">package</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>注意:</strong></p>
+<ol>
+<li><p>如果在<code>struts.xml</code>中的 <code>action</code>标签中配置了拦截器的引用，那么默认的拦截器就失效了，也就是之前使用的参数注入等拦截器失效了。</p>
+</li>
+<li><p>拦截器的执行顺序，假设有两个拦截器，如下：</p>
+<p>MyInterceptor1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sout(<span class="string">"拦截器11前前"</span>);</span><br><span class="line">invoke();</span><br><span class="line">sout(<span class="string">"拦截器11后后"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>MyInterceptor2：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sout(<span class="string">"拦截器22前前"</span>);</span><br><span class="line">invoke();</span><br><span class="line">sout(<span class="string">"拦截器22后后"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>打印结果：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">拦截器11前前</span><br><span class="line">拦截器22前前</span><br><span class="line"><span class="attribute">Action执行</span></span><br><span class="line"><span class="attribute">拦截器22后后</span></span><br><span class="line"><span class="attribute">拦截器11后后</span></span><br></pre></td></tr></table></figure>
+
+<p>事实上 <code>invoke</code>方法的调用代表两种含义：</p>
+<ol>
+<li>一是如果拦截器栈中还有其他的拦截器，那么 <code>ActionInvocation.invoke()</code> 将调用栈中的下一个拦截器来执行；</li>
+<li>二是如果拦截器栈中没有其他拦截器了，那么 <code>ActionInvocation.invoke()</code> 将调用Action来执行。</li>
+</ol>
+<p>在这种情况下，如果不是调用<code>invoke</code>方法，而是直接返回一个其他的什么字符串，就会导致整个执行的过程被终止；这种以 <code>ActionInvocation.invoke()</code> 为界的机制，事实上可以将拦截器中的代码分为两个部分，<strong>在invoke方法之前的代码将会在Action之前执行，invoke方法之后的代码将会在Action执行之后逆序执行</strong>。</p>
+</li>
+</ol>
+
       
     </div>
     
@@ -380,7 +411,7 @@
   
     <div>
     
-        <div style="text-align:center;color: #ccc;font-size:14px;">--本文结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----本文结束<i class="fa fa-paw"></i>感谢阅读-----</div>
     
 </div>
   
