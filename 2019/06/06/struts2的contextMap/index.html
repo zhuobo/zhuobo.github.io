@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="struts2,Web,">
 
 
 
@@ -79,14 +79,23 @@
 
 
 
+<meta name="description" content="一、Action的生命周期1. Action是多例的struts2的Action的多实例的，也就是每次被访问都会创建一个实例（也就是为每个请求都创建一个实例），因此不会出现线程安全问题。与之对比的是Servlet和struts1的Action都是单实例的，当有不同的请求同时访问，可能会出现线程安全问题。为了验证struts2为每次请求都创建一个Action的实例，下面创建一个Action，访问并">
+<meta name="keywords" content="struts2,Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="struts2的contextMap">
 <meta property="og:url" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/index.html">
 <meta property="og:site_name" content="酒徒">
+<meta property="og:description" content="一、Action的生命周期1. Action是多例的struts2的Action的多实例的，也就是每次被访问都会创建一个实例（也就是为每个请求都创建一个实例），因此不会出现线程安全问题。与之对比的是Servlet和struts1的Action都是单实例的，当有不同的请求同时访问，可能会出现线程安全问题。为了验证struts2为每次请求都创建一个Action的实例，下面创建一个Action，访问并">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-06T00:52:16.750Z">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/1.png">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/2.png">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/3.png">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/4.png">
+<meta property="og:updated_time" content="2019-06-06T05:57:37.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts2的contextMap">
+<meta name="twitter:description" content="一、Action的生命周期1. Action是多例的struts2的Action的多实例的，也就是每次被访问都会创建一个实例（也就是为每个请求都创建一个实例），因此不会出现线程安全问题。与之对比的是Servlet和struts1的Action都是单实例的，当有不同的请求同时访问，可能会出现线程安全问题。为了验证struts2为每次请求都创建一个Action的实例，下面创建一个Action，访问并">
+<meta name="twitter:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/1.png">
 
 
 
@@ -301,6 +310,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -328,7 +359,75 @@
       
 
       
-        
+        <h2 id><a href="#" class="headerlink" title=" "></a> </h2><h2 id="一、Action的生命周期"><a href="#一、Action的生命周期" class="headerlink" title="一、Action的生命周期"></a>一、Action的生命周期</h2><h3 id="1-Action是多例的"><a href="#1-Action是多例的" class="headerlink" title="1. Action是多例的"></a>1. Action是多例的</h3><p>struts2的Action的多实例的，也就是每次被访问都会创建一个实例（也就是为每个请求都创建一个实例），因此不会出现线程安全问题。与之对比的是Servlet和struts1的Action都是单实例的，当有不同的请求同时访问，可能会出现线程安全问题。为了验证struts2为每次请求都创建一个Action的实例，下面创建一个Action，访问并在方法中打印<strong>this</strong>（this值得就是这个Action对象本身）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">return</span> SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<img src="/2019/06/06/struts2的contextMap/1.png">
+
+<p>这个在一个浏览器中刷新几次访问HelloAction得到的结果，由于this表示的就是Action对象本身，从输出结果可以知道这些对象是不同的对象，因此struts2的Action每次被访问都会实例化。</p>
+<h3 id="2-Servlet是单例的"><a href="#2-Servlet是单例的" class="headerlink" title="2. Servlet是单例的"></a>2. Servlet是单例的</h3><p>与struts2的Action不同，Servlet是默认情况下单例的。当有多个请求请求同一个Servlet的时候，Servlet采用多线程的方式处理多个请求。多线程依赖线程池实现，Servlet使用一个<strong>调度线程</strong>管理多个处理请求的线程。当有一个请求到来，调度线程为这个请求分配一个处理请求的线程，然后由该线程执行Servlet的<strong>service</strong>方法。因此，当有多个请求到达服务器，就会出现<strong>service</strong>方法在多个线程之间并发执行的情况。这种单实例多线程的机制有利于减少创建实例带来的开销，提升了对请求的响应时间，但是有可能会出现线程安全问题。</p>
+<p>与此类似的，<strong>struts1</strong>的Action也是单例的。</p>
+<p><strong>线程安全问题的避免</strong>：</p>
+<ol>
+<li>同步对共享数据的访问：在<code>doGet()</code>，<code>doPost()</code>方法前加上关键字 <code>synchronized</code>，可以保证一次（同时）只能有一个线程在访问共享区域；</li>
+<li>避免使用Servlet的成员变量，使用局部变量，哪怕不得已使用了成员变量，也不要改变成员变量的值，获取它即可。</li>
+</ol>
+<h2 id="二、请求数据的存储"><a href="#二、请求数据的存储" class="headerlink" title="二、请求数据的存储"></a>二、请求数据的存储</h2><p>每次向服务器发起请求都会携带一些请求的数据，那么服务器是如何存储这些请求的数据的呢？当服务器接收到请求，在执行Action之前核心控制器 <code>StrutsPrepareAndExecuteFilter</code> 都会创建一个<code>ActionContext</code>和一个<code>ValueStack</code>用于存储数据，这两个对象存储了整个访问过程的数据。</p>
+<p><code>ValueStack</code>对象是一个List对象，封装了当前被访问的Action的对象以及其他的相关的对象；</p>
+<p><code>ActionContext</code>对象，也就是<code>contextMap</code>对象，是一个Map对象，存储的数据包括：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Key</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>valueStack (root)</td>
+<td>java.util.List</td>
+<td>没有root这个key，值栈是是一个list。</td>
+</tr>
+<tr>
+<td>application</td>
+<td>java.util.Map&lt;String,Object&gt;</td>
+<td>ServletContext中的所有属性。</td>
+</tr>
+<tr>
+<td>session</td>
+<td>java.util.Map&lt;String,Object&gt;</td>
+<td>HttpSession中的所有属性。</td>
+</tr>
+<tr>
+<td>request</td>
+<td>java.util.Map&lt;String,Object&gt;</td>
+<td>ServletRequest中的所有属性。</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>java.util.Map</td>
+<td>参数</td>
+</tr>
+<tr>
+<td>attr</td>
+<td>java.util.Map</td>
+<td>把页面、请求、会话、应用范围内的所有属性放到一起。</td>
+</tr>
+</tbody></table>
+<p>可以使用<code>&lt;s:debug&gt;</code>标签查看<code>ActionContext</code>存储的数据。</p>
+<img src="/2019/06/06/struts2的contextMap/2.png">
+
+<img src="/2019/06/06/struts2的contextMap/3.png">
+
+<p>由上面的表格可以知道session也是保存在contextMap中的，因此我们可以测试一下，先往session中存储一个键值对：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%session.setAttribute("username","david");%</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">s:debug</span>&gt;</span><span class="tag">&lt;/<span class="name">s:debug</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2019/06/06/struts2的contextMap/4.png">
+
+<h2 id="三、ActionContext的数据操作"><a href="#三、ActionContext的数据操作" class="headerlink" title="三、ActionContext的数据操作"></a>三、ActionContext的数据操作</h2><h3 id="1-ActionContext（contextMap）中存储数据"><a href="#1-ActionContext（contextMap）中存储数据" class="headerlink" title="1. ActionContext（contextMap）中存储数据"></a>1. ActionContext（contextMap）中存储数据</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 1. 获取ActionContext</span></span><br><span class="line">        ActionContext contextMap = ActionContext.getContext();</span><br><span class="line">        <span class="comment">// 2. 往ActionContext中存储数据（键值对）</span></span><br><span class="line">        contextMap.put(<span class="string">"username"</span>,<span class="string">"zhuobo"</span>);</span><br><span class="line">        contextMap.put(<span class="string">"password"</span>, <span class="string">"abc"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 往ActionContext中的session中存储数据</span></span><br><span class="line">        Map&lt;String, Object&gt; session = contextMap.getSession();</span><br><span class="line">        session.put(<span class="string">"username"</span>, <span class="string">"zhuobo11"</span>);</span><br><span class="line">        session.put(<span class="string">"password"</span>, <span class="string">"abc11"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4. 往ActionContext中的request中存储数据</span></span><br><span class="line">        Map&lt;String, Object&gt; application = contextMap.getApplication();</span><br><span class="line">        <span class="comment">//session对象也可以用这种方法获取</span></span><br><span class="line">        <span class="comment">/*HttpSession session1 = ServletActionContext.getRequest().getSession();*/</span></span><br><span class="line"></span><br><span class="line">        application.put(<span class="string">"username"</span>, <span class="string">"zhuobo22"</span>);</span><br><span class="line">        application.put(<span class="string">"password"</span>, <span class="string">"abc22"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 5. 往request中存储数据</span></span><br><span class="line">        HttpServletRequest request = ServletActionContext.getRequest();</span><br><span class="line">        request.setAttribute(<span class="string">"username"</span>,<span class="string">"zhuobo33"</span>);</span><br><span class="line">        request.setAttribute(<span class="string">"password"</span>, <span class="string">"abc33"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-ValueStack中存储数据"><a href="#2-ValueStack中存储数据" class="headerlink" title="2. ValueStack中存储数据"></a>2. ValueStack中存储数据</h3>
       
     </div>
     
@@ -351,6 +450,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/struts2/" rel="tag"><i class="fa fa-tag"></i>struts2</a>
+          
+            <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i>Web</a>
+          
+        </div>
       
 
       
@@ -422,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -501,6 +617,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Action的生命周期"><span class="nav-text">一、Action的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Action是多例的"><span class="nav-text">1. Action是多例的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Servlet是单例的"><span class="nav-text">2. Servlet是单例的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、请求数据的存储"><span class="nav-text">二、请求数据的存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、ActionContext的数据操作"><span class="nav-text">三、ActionContext的数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ActionContext（contextMap）中存储数据"><span class="nav-text">1. ActionContext（contextMap）中存储数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ValueStack中存储数据"><span class="nav-text">2. ValueStack中存储数据</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
