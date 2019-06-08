@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/6.png">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/5.png">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/06/struts2的contextMap/7.png">
-<meta property="og:updated_time" content="2019-06-08T11:30:32.187Z">
+<meta property="og:updated_time" content="2019-06-08T12:17:55.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts2的contextMap">
 <meta name="twitter:description" content="一、Action的生命周期1. Action是多例的struts2的Action的多实例的，也就是每次被访问都会创建一个实例（也就是为每个请求都创建一个实例），因此不会出现线程安全问题。与之对比的是Servlet和struts1的Action都是单实例的，当有不同的请求同时访问，可能会出现线程安全问题。为了验证struts2为每次请求都创建一个Action的实例，下面创建一个Action，访问并">
@@ -455,6 +455,14 @@
 <img src="/2019/06/06/struts2的contextMap/7.png">
 
 
+
+<h3 id="4-ValueStack的方法"><a href="#4-ValueStack的方法" class="headerlink" title="4. ValueStack的方法"></a>4. ValueStack的方法</h3><ol>
+<li>push()：往值栈中压如数据</li>
+</ol>
+<ol start="2">
+<li>setValue()</li>
+</ol>
+
       
     </div>
     
@@ -658,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Action的生命周期"><span class="nav-text">一、Action的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Action是多例的"><span class="nav-text">1. Action是多例的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Servlet是单例的"><span class="nav-text">2. Servlet是单例的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、请求数据的存储"><span class="nav-text">二、请求数据的存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、ActionContext的数据操作"><span class="nav-text">三、ActionContext的数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ActionContext（contextMap）中存储数据"><span class="nav-text">1. ActionContext（contextMap）中存储数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ValueStack中存储数据"><span class="nav-text">2. ValueStack中存储数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-获取数据"><span class="nav-text">3. 获取数据</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Action的生命周期"><span class="nav-text">一、Action的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Action是多例的"><span class="nav-text">1. Action是多例的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Servlet是单例的"><span class="nav-text">2. Servlet是单例的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、请求数据的存储"><span class="nav-text">二、请求数据的存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、ActionContext的数据操作"><span class="nav-text">三、ActionContext的数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ActionContext（contextMap）中存储数据"><span class="nav-text">1. ActionContext（contextMap）中存储数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ValueStack中存储数据"><span class="nav-text">2. ValueStack中存储数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-获取数据"><span class="nav-text">3. 获取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ValueStack的方法"><span class="nav-text">4. ValueStack的方法</span></a></li></ol></li></ol></div>
             
 
           </div>
