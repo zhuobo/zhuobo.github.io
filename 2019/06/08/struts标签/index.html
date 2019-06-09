@@ -79,20 +79,22 @@
 
 
 
-<meta name="description" content="一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&amp;lt;%@ taglib uri =&amp;quot;/struts-tags&amp;quot; prefix =&amp;quot;s&amp;quot; %&amp;gt;。 二、常用标签 迭代标签 当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是不">
+<meta name="description" content="一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&amp;lt;%@ taglib uri =&amp;quot;/struts-tags&amp;quot; prefix =&amp;quot;s&amp;quot; %&amp;gt;。 二、常用标签1. 迭代标签当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是">
 <meta name="keywords" content="struts2,Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="struts标签">
 <meta property="og:url" content="http://zhuobo.github.io/2019/06/08/struts标签/index.html">
 <meta property="og:site_name" content="酒徒">
-<meta property="og:description" content="一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&amp;lt;%@ taglib uri =&amp;quot;/struts-tags&amp;quot; prefix =&amp;quot;s&amp;quot; %&amp;gt;。 二、常用标签 迭代标签 当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是不">
+<meta property="og:description" content="一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&amp;lt;%@ taglib uri =&amp;quot;/struts-tags&amp;quot; prefix =&amp;quot;s&amp;quot; %&amp;gt;。 二、常用标签1. 迭代标签当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/08/struts标签/1.png">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/08/struts标签/2.png">
-<meta property="og:updated_time" content="2019-06-08T14:08:29.411Z">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/08/struts标签/3.png">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/08/struts标签/4.png">
+<meta property="og:updated_time" content="2019-06-09T12:29:23.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="struts标签">
-<meta name="twitter:description" content="一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&amp;lt;%@ taglib uri =&amp;quot;/struts-tags&amp;quot; prefix =&amp;quot;s&amp;quot; %&amp;gt;。 二、常用标签 迭代标签 当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是不">
+<meta name="twitter:description" content="一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&amp;lt;%@ taglib uri =&amp;quot;/struts-tags&amp;quot; prefix =&amp;quot;s&amp;quot; %&amp;gt;。 二、常用标签1. 迭代标签当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是">
 <meta name="twitter:image" content="http://zhuobo.github.io/2019/06/08/struts标签/1.png">
 
 
@@ -368,9 +370,7 @@
 
       
         <h2 id="一、struts的标签"><a href="#一、struts的标签" class="headerlink" title="一、struts的标签"></a>一、struts的标签</h2><p>struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：<code>&lt;%@ taglib uri =&quot;/struts-tags&quot; prefix =&quot;s&quot; %&gt;</code>。</p>
-<h2 id="二、常用标签"><a href="#二、常用标签" class="headerlink" title="二、常用标签"></a>二、常用标签</h2><ol>
-<li><p>迭代标签</p>
-<p>当一个Action类提供了一个属性，并且提供了该属性的<strong>getter</strong>方法，那么该属性会自动被Struts2保存到<strong>值栈</strong>之中，也就是不用专门获取值栈在存储数据。</p>
+<h2 id="二、常用标签"><a href="#二、常用标签" class="headerlink" title="二、常用标签"></a>二、常用标签</h2><h3 id="1-迭代标签"><a href="#1-迭代标签" class="headerlink" title="1. 迭代标签"></a>1. 迭代标签</h3><p>当一个Action类提供了一个属性，并且提供了该属性的<strong>getter</strong>方法，那么该属性会自动被Struts2保存到<strong>值栈</strong>之中，也就是不用专门获取值栈在存储数据。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentAction</span> <span class="keyword">extends</span> <span class="title">ActionSupport</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Student&gt; studentList;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Action提供属性，并且提供属性的getter方法，那么属性就会被struts2自动存储到值栈</span></span><br><span class="line">    <span class="comment">// jsp从值栈中获取数据</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Student&gt; <span class="title">getStudentList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> studentList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果是使用了struts2，jsp一般从值栈中获取数据</span></span><br><span class="line">        <span class="comment">// 如果是使用了servlet，jsp一般从request域中获取数据</span></span><br><span class="line">        studentList = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">        studentList.add(<span class="keyword">new</span> Student(<span class="string">"孙悟红"</span>, <span class="number">16</span>, <span class="string">"花果山"</span>));</span><br><span class="line">        studentList.add(<span class="keyword">new</span> Student(<span class="string">"红孩儿"</span>, <span class="number">17</span>, <span class="string">"火焰山"</span>));</span><br><span class="line">        studentList.add(<span class="keyword">new</span> Student(<span class="string">"铁山公主"</span>, <span class="number">18</span>, <span class="string">"芭蕉洞"</span>));</span><br><span class="line">        studentList.add(<span class="keyword">new</span> Student(<span class="string">"紫霞仙子"</span>, <span class="number">19</span>, <span class="string">"盘丝洞"</span>));</span><br><span class="line">        <span class="keyword">return</span> SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <img src="/2019/06/08/struts标签/1.png">
@@ -395,11 +395,20 @@
 
 
 
+<h3 id="2-OGNL投影"><a href="#2-OGNL投影" class="headerlink" title="2. OGNL投影"></a>2. OGNL投影</h3><p>OGNL投影指的是根据给定条件过滤集合：</p>
+<p>?#：过滤<strong>所有</strong>符合条件的元素，如studentList.{?#this.age &gt; 17}</p>
+<p>^#：过滤<strong>第一个</strong>符合条件的元素，如studentList.{^#this.age &gt; 17}</p>
+<p>$#：过滤<strong>最后一个</strong>符合条件的元素，如studentList.{$#this.age &gt; 17}</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=<span class="string">"studentList.&#123;?#this.age &gt; 17&#125;"</span> <span class="keyword">var</span>=<span class="string">"student"</span> status=<span class="string">"st"</span>&gt;</span><br><span class="line">            &lt;s:<span class="keyword">if</span> test=<span class="string">"#st.odd"</span>&gt;</span><br><span class="line">                &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"odd"</span>&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;st.count&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;s:property value="#student.name"/&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;s:property value="#student.age"/&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;s:property value="#student.city"/&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/s:if&gt;</span><br><span class="line">            &lt;s:<span class="keyword">if</span> test=<span class="string">"#st.even"</span>&gt;</span><br><span class="line">                &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"even"</span>&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;st.count&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;s:property value="#student.name"/&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;s:property value="#student.age"/&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;s:property value="#student.city"/&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/s:if&gt;</span><br><span class="line">&lt;/s:iterator</span><br></pre></td></tr></table></figure>
 
+<img src="/2019/06/08/struts标签/3.png">
 
-</li>
-</ol>
+<p>如果是值需要展示指定的属性，比如只需要展示城市，遍历的时候不用指定<code>var</code>，这样默认遍历取出的值便是放在值栈栈顶，如<code>studentList.{city}</code>便是将该集合所有的<code>Student</code>的<code>city</code>属性存储到值栈栈顶，从栈顶取出值即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:iterator value=&quot;studentList.&#123;city&#125;&quot; status=&quot;st&quot;&gt;</span><br><span class="line">    &lt;s:if test=&quot;#st.odd&quot;&gt;</span><br><span class="line">        &lt;tr class=&quot;odd&quot;&gt;</span><br><span class="line">            &lt;td&gt;&lt;s:property/&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/s:if&gt;</span><br><span class="line">    &lt;s:if test=&quot;#st.even&quot;&gt;</span><br><span class="line">        &lt;tr class=&quot;even&quot;&gt;</span><br><span class="line">        	&lt;!-- 不写value,直接从值栈栈顶取值 --&gt;</span><br><span class="line">            &lt;td&gt;&lt;s:property/&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/s:if&gt;</span><br><span class="line">&lt;/s:iterator&gt;</span><br></pre></td></tr></table></figure>
 
+<img src="/2019/06/08/struts标签/4.png">
+
+<h3 id="3-set标签"><a href="#3-set标签" class="headerlink" title="3. set标签"></a>3. set标签</h3>
       
     </div>
     
@@ -603,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、struts的标签"><span class="nav-text">一、struts的标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、常用标签"><span class="nav-text">二、常用标签</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、struts的标签"><span class="nav-text">一、struts的标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、常用标签"><span class="nav-text">二、常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-迭代标签"><span class="nav-text">1. 迭代标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OGNL投影"><span class="nav-text">2. OGNL投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-set标签"><span class="nav-text">3. set标签</span></a></li></ol></li></ol></div>
             
 
           </div>
