@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F06%2F13%2FPython%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[一、定义函数使用 def语句定义函数，依次写出函数名、括号、参数、冒号，然后在缩进的代码块中写函数体，使用return语句返回。当没有return语句时，默认提供一个，但是返回的是None，返回None可以简写为return。 12def sum_of_two(x, y): return x + y 空函数，如果一个函数什么都不做，或者暂时还没想好怎么实现，只是希望程序可以跑起来，那么可以使用pass语句。 12def nop(): pass 多个返回值 Python可以提供多个返回值，事实上返回的是一个tuple 12def function(x, y): return x, y 二、函数的参数1. 位置参数在调用函数时，根据函数定义的参数位置来传递参数，参数的个数不能少、位置要一一对应。 2. 默认参数定义函数时给出某些参数的默认值，在调用的的时候不用传递这些有默认值的参数，这些参数将会使用默认值，当然也可以传递。要注意的是，无论是定义函数，还是调用函数默认参数都必须在位置参数之后。 123456789def pow(x, n = 2): ans = 1 while n &gt;= 1: ans *= x n -= 1 return ansprint(pow(3)) # 9print(pow(3, 3)) # 27 默认参数应该指向一个不可变的对象，比如整数、字符串、None等，如果默认参数指向了可变的对象比如list，一旦list在函数中被改变，那么下次调用函数使用的默认参数就是被改变了的参数，出现不希望出现的情况。 3. 可变参数可变参数指的是传递的参数个数可以变化，可以是任意个参数。在没有使用可变参数的方法定义函数的时候，又希望函数的参数可以变化，那么就可以将函数参数定义为一个list。 12345def calc(nums): ans = 0 for num in nums: ans += num * num; return ans 这样在调用的时候也可以传递多个参数，但是要先组装为一个list 1print(calc([1, 2, 3])) 在上面定义函数的基础上，参数前加一个*,表示是可变参数，函数体都不需要改变即可直接在调用函数的时候传递任意个参数。 123456def calc(*nums): ans = 0 for num in nums: ans += num * num; return ans 调用函数，不需要组装list，或者tuple 1print(calc(1, 2, 3)) 函数定义为可变参数之后，如果参数又是一个list，那么还是可以直接传递list作为参数，只需要在list名之前加一个*，这就表示把list的元素变为可变参数传递到函数，并且在调用的时候自动组装成一个tuple，*list`表示把list的元素作为可变参数传递给函数。 12list = (1, 2, 3, 4)print(calc(*list)) 4. 关键字参数可变参数允许传递任意个参数，在函数调用的时候自动组装为一个tuple，二关键字参数也是允许传递任意个含有参数名的参数，在函数调用的时候自动组装为一个dict。 12345678def show_user(username, age, **kw): print('username:', username, 'age:', age, 'other:',kw)show_user('zhuobo', 19)show_user('zhuobo', 19, city = '广州')show_user('zhuobo', 19, city = '广州', gender = 'male') 输出： 123username: zhuobo age: 19 other: &#123;&#125;username: zhuobo age: 19 other: &#123;'city': '广州'&#125;username: zhuobo age: 19 other: &#123;'city': '广州', 'gender': 'male'&#125; 当然在传递关键字参数的时候，也可以先组装一个dict，然后使用类似于*list的方式传递关键字参数。**kw表示把dict的所有key-value用关键字参数传递到函数的**kw参数，**kw将获取一份dict的拷贝。 12dict = &#123;'city':'广州', 'gender':'male'&#125;show_user('zhuobo', 19, **dict) 5. 命名关键字参数对于关键子参数，调用函数的时候可以传递任意个关键字参数，如果要限制关键字参数的名字，就需要命名关键字参数。和关键字参数**kw所不同的是，需要在位置参数和命名关键字参数之间写一个*作为分隔符号。如：要限制输入的关键字参数只能是city，hobby，那么就可以这么定义函数： 12def show_user(username, age, *, city, hobby): print(username, age, city, hobby) 调用方式： 1show_user('zhuobo', 19, city = 'Guangzhou', hobby = 'football') 输出： 1zhuobo 19 Guangzhou football 如果是函数已经定义了一个可变参数，那么就无需使用*作为分隔符，直接写命名关键字参数即可 12def show_user(username, age, *args, city, hobby): print(username, age, city, hobby) 注意： 函数调用时必须，命名关键字参数必须写上参数名，否则解释器无法区分位置参数和命名关键字参数； 如果没有可变参数，位置参数和命名关键字参数之间必须使用*作为分隔符；]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F06%2F13%2FPython%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[一、数据类型和变量1.数据类型 整数 浮点数 字符串，字符串使用单引号&#39;&#39;,或者双引号&quot;&quot;括起来，如果字符串中包含单引号或者双引号，那么应该转义字符\标记； 布尔值，只有False、True，注意首字母大写，布尔值的运算与或非使用and，or，not表示； 空值，使用None表示空值，空值不是0，就是表示什么都不是，而0是一个整数，有意义的； 2. 变量Python的变量类型是不固定的，被成为动态语言，与之对应的是静态语言。静态语言在定义的时候必须指定数据类型，如果为变量赋值，数据类型不匹配还会报错，java、C++等便是静态语言。 常量指的是不能变的变量，也即是值是固定的，Python中一般使用全部大写表示常量，如：PI = 3.141592653。但是这只是一种约定俗成，如果非要改变PI的值也是可以。 二、字符和编码 ASCII码：使用1个字节存储数据，包括英文字符、数字、一些常见英文符号; GB2312：中国制定的包括中文的编码 Unicode：为了将所有语言统一到一个编码，以解决不同地区使用不同编码集出现的乱码问题而制定的编码。Unicode编码通常是2个字节，如果非常生僻的字符可能会用到4个字节。 UTF-8：可编长编码，Unicode解决了乱码问题，但是会使本来只用一个字节编码的常用英文字母、数字等字符占用存储空间变为两倍。因此UTF-8将常用英文字母、数字编码为1个字节、中文汉字通常为3个字节、很生僻的字符会用到4-6个字节。 一般来说，在计算机内存中使用Unicode编码，当需要保存到硬盘或者在网络上传输就转换为UTF-8。 格式化输出字符串：Python使用类似于C语言的方式格式化字符串，在字符串的内部，%s表示用字符串替换，%d表示用整数替换。如果有多个占位符，后面使用 % 运算符再跟上相应的变量，注意要一一对应。 1'My name is %s, and I have got %d yuan for my work!' % ('zhuobo', salary) 常用的占位符： 占位符 替换 %s 字符串 %d 整数 %f 浮点数 %x 十六进整数 其中，替换的整数或者浮点数还可以指定是否在前面补0，或者占用的位数。 占用3位： 12'占用3位的整数：%3d' % 5#输出：占用3位的整数： 5' 前面补0： 12'占用3位的整数：%03d' % 5#输出：占用3位的整数：005' 三、list和tuple1. listlist（列表）是Python内置的一种数据类型，是有序的集合，可以随机存取其中的元素。 list使用中括号将数据括起来，数据之间用,分隔; 索引从0开始，最后一个元素是list[-1]，也可以是list[len(list) - 1]; list是一个有序的可变长度列表，可以使用append()追加元素; 1list.append('hello') 使用insert()将元素插入到指定的位置，以下表示插入到0号位置 1list.insert(0, 'hello') 使用pop()删除末尾元素，返回值为被删除元素 12# 空参数表示删除末尾元素var = list.pop() 使用pop(pos)删除指定位置元素，pos为指定的索引，返回值为被删除元素 12# 参数表示指定位置var = list.pop(pos) 一个list可以存储不同类型的元素 1list = ['asdf', 12, 13.4] list里面也可以存储list，如果要获取alice，相当于一个二维数组 123456&gt;&gt;&gt; list['asdf', 12, 13.4, ['david', 'alice']]&gt;&gt;&gt; len(list)4&gt;&gt;&gt; list[3][1] # 二维数组'alice' 2. tupletuple是另一种有序列表，使用()包裹起来，与list的区别是一旦tuple被初始化就不能修改，因此没有append()、insert()等修改元素的方法。tuple和list一样可以获取元素，但是不能被重新赋值为另外的元素，tuple不能修改的意义在于可以增强安全性，如果可以，就应该尽量使用tuple而不是list。要注意的是，定义一个tuple，在定义的时候就必须初始化，也就是确定tuple的元素。 1234567# 定义一个元组tuple1 = ('david', 13, 'alice', 14.5)# 定义一个空的元组tuple2 = ()# 定义一个只有1个元素的元组，当这个元素是数值时，为了区别数值，所有一个元素的元组在那个元素后面加一个逗号tuple3 = (1,) # 这是一个元组1个元素的元组，该元素是数字1tuple4 = (1) # 这是整数1, 不是元组 tuple不变指的是每个索引指向的元素不变，也就是本来tuple的元素是&#39;a&#39;,那么就一直是 &#39;a&#39;，而不能变成来其他的元素，如果指向的是一个可变的元素，比如list，那么list还是可以改变，这时候改变的是list的元素，而不是tuple的元素。 四、条件判断if_else句式： 1234if e: do somethingelse: do something if_elif_else句式： 12345678if e1: do somethingelif e2: do somethingelif e3: do somethingelse: do something 五、循环1. for x in ...循环for x in ...循环用于遍历list或者tuple，迭代取出存储其中的元素。 12345# for 循环names = ['zhuobo', 'david', 'alice']for name in names: print('Hello,', name) 1234567# list函数生成list，range函数生成生成序列sum = 0mylist = list(range(101))for num in mylist: sum += numprint(sum) 使用索引的for循环，使用函数enumerate()，事实上是将list组装成了类似于[(‘aaa’, 1), (‘bbb’, 2), (‘ccc’, 3)]这种形式。 1234names = ['zhuobo', 'david', 'alice']for index, name in enumerate(names): print(index,':', name) 2.while循环当循环条件不再满足，跳出循环 12345678# 100以内的奇数的和n = 1sum = 0while n &lt; 100: sum += n n += 2print(sum) 3. break、continuebreak控制直接跳出循环、continue控制跳过本轮循环，继续下一轮循环，这两个语句一般都会配合判断语句使用，符合条件就执行。 六、dict、set1. dict Python内置了对字典的支持，字典在其他语言中成为Map，也就是使用键-值对存储的数据结构。 123d = &#123;'Alice': 80, 'Zhuobo':90, 'David':88&#125;print('Alice:', d['Alice']) 字典中的键不允许重复，可以使用in判断是键是否在字典中： 1234&gt;&gt;&gt; 'zhuobo' in dFalse&gt;&gt;&gt; 'Zhuobo' in dTrue 除了使用索引的方法获取值，字典还提供了get()方法获取值，如果key不存在就返回None，也可以返回指定的值。 1234&gt;&gt;&gt; d.get('zhuobo', -1)-1&gt;&gt;&gt; d.get('Zhuobo')90 要注意的是，作为key的数据必须是不可变的，比如数字、字符串等，但是list是可变的数据，因此不可作为字典的键。这是因为字典使用哈希算法根据键获取值，而如果键是可变的，哈希的结果会变化。 2. set创建一个set，需要提供一个list，set的元素不重复，没有顺序。 12&gt;&gt;&gt; set(['zhuob', 12, 14.2, 12, 12])&#123;12, 14.2, 'zhuob'&#125; add(key)方法添加数据 123&gt;&gt;&gt; mySet.add('Alice')&gt;&gt;&gt; mySet&#123;'Alice', 12, 14.2, 'zhuob'&#125; remove(key)方法删除数据 123&gt;&gt;&gt; mySet.remove(12)&gt;&gt;&gt; mySet&#123;'Alice', 14.2, 'zhuob'&#125; 并集、交集 123456&gt;&gt;&gt; s1 = set([1, 2, 3])&gt;&gt;&gt; s2 = set([4, 2, 3])&gt;&gt;&gt; s1 &amp; s2&#123;2, 3&#125;&gt;&gt;&gt; s1 | s2&#123;1, 2, 3, 4&#125; 集合也不可存储可变数据，因为这样无法判断两个数据是否相等，无法去重。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[struts2解决表单重复提交]]></title>
+    <url>%2F2019%2F06%2F11%2Fstruts2%E8%A7%A3%E5%86%B3%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4%2F</url>
+    <content type="text"><![CDATA[一、表单的重复提交在用户填写完表单之后、提交表单之后，有可能会出现表单的重复提交，出现这种情况有可能有以下几种原因： 网络状态不好，多次点击提交按钮； 提交表单后，点击浏览器的刷新按钮； 提交表单后，点击浏览器的后退按钮，再次点击提交按钮。 二、表单重复提交的解决方案 使用JavaScript设置一个状态位，第一次点击之前设为true，表示用户可以提交表单，第一次点击之后设置为false，不允许用户提交或者直接将提交按钮disabled；但是这种方法只针对以上三种情况中的第一种有效，无法避免第二、第三种情况的发生； 使用验证码的方式：用户填写的表单包括服务器生成的验证码，当表单数据提交到服务器之后，服务器从session中获取服务器自己生成的验证码，获取之后从session中删除验证码，以保证该验证码的一次性；这样，服务器每次收到客户端的请求都先判断验证码是否一致，如果不一致自然便是重复提交（或者验证码错误）而无需处理数据； struts的token可以解决这个问题：使用&lt;s:token&gt;生成一个令牌，再配合 tokensession拦截器 创建一个表单，在表单里添加一个隐藏的&lt;s:token&gt;标签; 1234567&lt;form action="$&#123;pageContext.request.contextPath&#125;/student/login.do"&gt; &lt;s:textfield name="username" label="用户名"/&gt; &lt;s:textfield name="password" label="密码"/&gt; &lt;%--token标签--%&gt; &lt;s:token /&gt; &lt;input value="登录" type="submit"&gt;&lt;/form&gt; 在struts.xml中配置 tokensession拦截器 1234567&lt;action name="login" class="cn.zhuobo.web.action.StudentAction" method="login" &gt; &lt;!--由于配置了自定义的不在默认拦截器里面的拦截器，因此要手动加上默认拦截器defaultStack--&gt; &lt;interceptor-ref name="defaultStack"/&gt; &lt;interceptor-ref name="tokenSession"/&gt; &lt;result name="success"&gt;/success.jsp&lt;/result&gt; &lt;result name="invalid.token"&gt;/invalid.jsp&lt;/result&gt;&lt;/action&gt;]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+        <tag>struts2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[struts标签]]></title>
     <url>%2F2019%2F06%2F08%2Fstruts%E6%A0%87%E7%AD%BE%2F</url>
     <content type="text"><![CDATA[一、struts的标签struts提供的简化视图页面编写的标签，要使用struts的标签，首先要引入：&lt;%@ taglib uri =&quot;/struts-tags&quot; prefix =&quot;s&quot; %&gt;。 二、常用标签1. 迭代标签当一个Action类提供了一个属性，并且提供了该属性的getter方法，那么该属性会自动被Struts2保存到值栈之中，也就是不用专门获取值栈在存储数据。 1234567891011121314151617181920public class StudentAction extends ActionSupport &#123; private List&lt;Student&gt; studentList; // Action提供属性，并且提供属性的getter方法，那么属性就会被struts2自动存储到值栈 // jsp从值栈中获取数据 public List&lt;Student&gt; getStudentList() &#123; return studentList; &#125; public String list() &#123; // 如果是使用了struts2，jsp一般从值栈中获取数据 // 如果是使用了servlet，jsp一般从request域中获取数据 studentList = new ArrayList&lt;Student&gt;(); studentList.add(new Student("孙悟红", 16, "花果山")); studentList.add(new Student("红孩儿", 17, "火焰山")); studentList.add(new Student("铁山公主", 18, "芭蕉洞")); studentList.add(new Student("紫霞仙子", 19, "盘丝洞")); return SUCCESS; &#125;&#125; 遍历标签的使用： value：是OGNL表达式，首先从值栈中获取； var：遍历使用的临时变量，值得注意的是Struts会把当前遍历到的变量以var为键，变量指向的对象为值存储到contextMap中，因此获取var的对象要从contextMap中获取； status：用于记录变量的一些属性 boolean isOdd()：奇数 boolean iseven()：偶数 boolean isFirst()：第一个 boolean isLast()：最后一个 int getIndex()：获取索引，从0开始 int getCount()：获取序号，从1开始 12345678910111213141516171819&lt;%--studentList是存储在值栈中的，但是每遍历一次就会将student存储到contextMap中，因此OGNL获取要加#--%&gt; &lt;s:iterator value="studentList" var="student" status="st"&gt; &lt;s:if test="#st.odd"&gt; &lt;tr class="odd"&gt; &lt;td&gt;$&#123;st.count&#125;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.name"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.age"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.city"/&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/s:if&gt; &lt;s:if test="#st.even"&gt; &lt;tr class="even"&gt; &lt;td&gt;$&#123;st.count&#125;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.name"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.age"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.city"/&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/s:if&gt; &lt;/s:iterator&gt; 2. OGNL投影OGNL投影指的是根据给定条件过滤集合： ?#：过滤所有符合条件的元素，如studentList.{?#this.age &gt; 17} ^#：过滤第一个符合条件的元素，如studentList.{^#this.age &gt; 17} $#：过滤最后一个符合条件的元素，如studentList.{$#this.age &gt; 17} 123456789101112131415161718&lt;s:iterator value="studentList.&#123;?#this.age &gt; 17&#125;" var="student" status="st"&gt; &lt;s:if test="#st.odd"&gt; &lt;tr class="odd"&gt; &lt;td&gt;$&#123;st.count&#125;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.name"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.age"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.city"/&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/s:if&gt; &lt;s:if test="#st.even"&gt; &lt;tr class="even"&gt; &lt;td&gt;$&#123;st.count&#125;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.name"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.age"/&gt;&lt;/td&gt; &lt;td&gt;&lt;s:property value="#student.city"/&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/s:if&gt;&lt;/s:iterator 如果是值需要展示指定的属性，比如只需要展示城市，遍历的时候不用指定var，这样默认遍历取出的值便是放在值栈栈顶，如studentList.{city}便是将该集合所有的Student的city属性存储到值栈栈顶，从栈顶取出值即可。 12345678910111213&lt;s:iterator value="studentList.&#123;city&#125;" status="st"&gt; &lt;s:if test="#st.odd"&gt; &lt;tr class="odd"&gt; &lt;td&gt;&lt;s:property/&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/s:if&gt; &lt;s:if test="#st.even"&gt; &lt;tr class="even"&gt; &lt;!-- 不写value,直接从值栈栈顶取值 --&gt; &lt;td&gt;&lt;s:property/&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/s:if&gt;&lt;/s:iterator&gt; 3. set标签&lt;s:set&gt;标签用于将数据存储到指定的位置，存储数据的位置包括application、session、request、page、action一共5个位置。&lt;s:set&gt;的属性： value：必选，存储到map的值，是一个OGNL表达式； var：可选，存储到map的键； scope：可选，存储范围，不写默认是action，在contextMap中和request中各存一份； 1234567891011&lt;s:set value="'zhuobo-action'" var="username"/&gt;&lt;s:set value="'zhuobo-application'" var="username" scope="application"/&gt;&lt;s:set value="'zhuobo-request'" var="username" scope="request"/&gt;&lt;s:set value="'zhuobo-session'" var="username" scope="session"/&gt;&lt;s:set value="'zhuobo-page'" var="username" scope="page"/&gt;&lt;%--取数据--%&gt;&lt;s:property value="#application.username"/&gt;&lt;br&gt;&lt;s:property value="#request.username"/&gt;&lt;br&gt;&lt;s:property value="#session.username"/&gt;&lt;br&gt;&lt;s:property value="#username"/&gt;&lt;br&gt; 4. action标签action标签用于在jsp页面中调用Action，如果需要将Action的结果页面展示出来，设置属性 executeResult为 true，指定Action的name属性，但是不用写后缀名。 1&lt;s:action name="hello" executeResult="true" /&gt;]]></content>
@@ -8,8 +30,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +42,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +54,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +66,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +78,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +90,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +102,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +114,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +126,8 @@
         <category>web</category>
       </categories>
       <tags>
-        <tag>struts2</tag>
         <tag>Web</tag>
+        <tag>struts2</tag>
       </tags>
   </entry>
   <entry>
