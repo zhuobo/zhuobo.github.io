@@ -90,7 +90,8 @@
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/13/Hibernate基础/1.png">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/13/Hibernate基础/2.png">
 <meta property="og:image" content="http://zhuobo.github.io/2019/06/13/Hibernate基础/3.png">
-<meta property="og:updated_time" content="2019-06-13T14:07:32.054Z">
+<meta property="og:image" content="http://zhuobo.github.io/2019/06/13/Hibernate基础/4.png">
+<meta property="og:updated_time" content="2019-06-16T13:54:49.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate基础">
 <meta name="twitter:description" content="一、HIbernate框架介绍Hibernate是一种ORM框架，用于在java对象和关系型数据库之间建立映射，以实现直接存取java对象，以面向对象的方法操作数据库，自动生成SQL语句，简化开发。 ORM：Object Relational Mapping，对象关系映射，用于实现面向对象编程语言里不同类型系统数据之间的转换，简单来说就是对象和数据库表之间通过映射关系联系起来，一个对象对应一张数据">
@@ -384,6 +385,40 @@
 </ol>
 <h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1.获取核心 配置文件对象,默认是加载src的hibernate.cfg.xm文件</span></span><br><span class="line">        Configuration cfg = <span class="keyword">new</span> Configuration().configure();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.创建会话工厂</span></span><br><span class="line">        SessionFactory factory = cfg.buildSessionFactory();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.创建会话</span></span><br><span class="line">        Session session = factory.openSession();</span><br><span class="line">        <span class="comment">//开启事务</span></span><br><span class="line">        Transaction trans = session.beginTransaction();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//保存</span></span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setUsername(<span class="string">"zhuobo"</span>);</span><br><span class="line">        user.setPassword(<span class="string">"abcdefg"</span>);</span><br><span class="line">        session.save(user);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//提交事务</span></span><br><span class="line">        trans.commit();</span><br><span class="line">        <span class="comment">//4.关闭会话</span></span><br><span class="line">        session.close();</span><br><span class="line">        <span class="comment">//5.关闭工厂，释放资源</span></span><br><span class="line">        factory.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="三、Hibernate的一些API"><a href="#三、Hibernate的一些API" class="headerlink" title="三、Hibernate的一些API"></a>三、Hibernate的一些API</h2><h3 id="1-Configuration配置对象"><a href="#1-Configuration配置对象" class="headerlink" title="1. Configuration配置对象"></a>1. Configuration配置对象</h3><p>一般来说Hibernate可是使用两种核心配置文件的格式，一种是<code>xml</code>格式、另一种是<code>properties</code>格式，这两个配置文件都是放在<code>project/etc</code>目录下。由于<code>properties</code>格式的文件是键值对的形式，有键名必须唯一的局限性，一般来说xml配置文件更加常用，可以配置更多的内容。</p>
+<img src="/2019/06/13/Hibernate基础/4.png">
+
+<p>在上面的测试中，要先获取<code>Configuration</code>配置对象，事实上就是在加载配置文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取核心 配置文件对象,默认是加载src的hibernate.cfg.xm文件</span></span><br><span class="line"><span class="comment">//调用configure()方法加载的是hibernate.cfg.xml文件</span></span><br><span class="line"><span class="comment">//直接new Configuration()加载的是hibernate.properties文件</span></span><br><span class="line"><span class="comment">// 默认情况下，配置文件都是放在src目录先</span></span><br><span class="line">Configuration cfg = <span class="keyword">new</span> Configuration().configure();</span><br></pre></td></tr></table></figure>
+
+<p><strong>加载映射文件</strong>：</p>
+<ol>
+<li>在hibernate.cfg.xml中配置，这是最常用的方法：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="number">2</span>、配置JavaBean与表的映射文件 --&gt;</span><br><span class="line">&lt;mapping resource=<span class="string">"com/gyf/hibernate/domain/User.hbm.xml"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>配置文件对象<code>Configuration</code>调用方法<code>addResource()</code>:</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取核心 配置文件对象,默认是加载src的hibernate.cfg.xm文件</span></span><br><span class="line">Configuration cfg = <span class="keyword">new</span> Configuration().configure(); </span><br><span class="line">cfg.addResource(<span class="string">"cn\\zhuobo\\web\\domain\\User.hbm.xml"</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>配置文件对象<code>Configuration</code>调用方法<code>addClass()</code>:</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取核心 配置文件对象,默认是加载src的hibernate.cfg.xm文件</span></span><br><span class="line">Configuration cfg = <span class="keyword">new</span> Configuration().configure();</span><br><span class="line">cfg.addClass(User.class);</span><br></pre></td></tr></table></figure>
+
+<p>这三种方法，第一种在核心配置文件hibernate.cfg.xml中配置映射文件时最常使用的方法。</p>
+<h3 id="2-SessionFactory"><a href="#2-SessionFactory" class="headerlink" title="2. SessionFactory"></a>2. SessionFactory</h3><p>SessionFactory是生产session的工厂，就相当于数据库连接池，管理数据库连接。要注意的是SessionFactory不是轻量级的，一般来说一个项目只需要一个SessionFactory就可以了，用来负责管理应用程序和数据库的所有会话（session），<strong>SessionFactory是线程安全的</strong>。获取<code>SessionFactory</code>的方法是<code>Configuration</code>配置对象调用方法<code>buildSessionFactory()</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取核心 配置文件对象,默认是加载src的hibernate.cfg.xm文件</span></span><br><span class="line">Configuration cfg = <span class="keyword">new</span> Configuration().configure(); </span><br><span class="line"><span class="comment">//2.创建会话工厂</span></span><br><span class="line">SessionFactory factory = cfg.buildSessionFactory();</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Session"><a href="#3-Session" class="headerlink" title="3. Session"></a>3. Session</h3><p>Hibernate中的Session与HttpSession的概念有点不一样，HttpSession表示用户与服务器的一次会话，Hibernate的Session表示应用程序与数据库的一次会话（交互）。session是轻量级的，线程不安全的，通常将一个session和一个数据库事务绑定，每次执行一个数据库事务都要创建一个session（从SessionFactory中获取一个session），使用session后还有关闭session（归还session）。</p>
+<p>SessionFactory提供了两个方法来获取Session：</p>
+<ol>
+<li><p>factory.openSession()：获取一个全新的Session；</p>
+</li>
+<li><p>factory.getCurrentSession()：获取与当前线程绑定的Session，一个线程只有一个Session。</p>
+</li>
+</ol>
 
       
     </div>
@@ -590,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、HIbernate框架介绍"><span class="nav-text">一、HIbernate框架介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Hibernate的使用"><span class="nav-text">二、Hibernate的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-导入jar包"><span class="nav-text">1. 导入jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HIbernate的核心配置文件"><span class="nav-text">2. HIbernate的核心配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-编写javaBean与映射文件javaBean-hbm-xml"><span class="nav-text">3. 编写javaBean与映射文件javaBean.hbm.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-测试"><span class="nav-text">4. 测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、HIbernate框架介绍"><span class="nav-text">一、HIbernate框架介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Hibernate的使用"><span class="nav-text">二、Hibernate的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-导入jar包"><span class="nav-text">1. 导入jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HIbernate的核心配置文件"><span class="nav-text">2. HIbernate的核心配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-编写javaBean与映射文件javaBean-hbm-xml"><span class="nav-text">3. 编写javaBean与映射文件javaBean.hbm.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-测试"><span class="nav-text">4. 测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Hibernate的一些API"><span class="nav-text">三、Hibernate的一些API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Configuration配置对象"><span class="nav-text">1. Configuration配置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SessionFactory"><span class="nav-text">2. SessionFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Session"><span class="nav-text">3. Session</span></a></li></ol></li></ol></div>
             
 
           </div>
